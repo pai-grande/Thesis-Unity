@@ -20,7 +20,8 @@ public static class SaveData
                 Directory.CreateDirectory(path);
             }
 
-            file = "Subj" + participantData.num + "_Ord" + participantData.indType + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH'h'mm") + ".json";
+            //file = "Subj" + participantData.num + "_Ord" + participantData.indType + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH'h'mm") + ".json";
+            file = "Subj" + participantData.num +  "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH'h'mm") + ".json";
         }
 
         string partData = JsonConvert.SerializeObject(participantData, Formatting.Indented);

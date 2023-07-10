@@ -9,6 +9,7 @@ public class InitialSetup : MonoBehaviour
 {
     private Participant part;
     private int pNum, pAge, pGender, pIndType, pPitchType;
+    public PersistentData persisData;
     //private string pGender = "Male";
     //public Dropdown ddGend;
 
@@ -32,7 +33,7 @@ public class InitialSetup : MonoBehaviour
         // male = 0; female = 1;
     }
 
-    public void SetParticipantIndicatorTypeControl()
+    /*public void SetParticipantIndicatorTypeControl()
     {
         //pIndType = int.Parse(indType);
         // Control Attitude Indicator is 0;
@@ -56,16 +57,16 @@ public class InitialSetup : MonoBehaviour
     {
         // Non-Inverted Pitch is 1
         pPitchType = 1;
-    }
+    }*/
 
 
     public void CreateParticipant()
     {
-        part = new Participant(pNum, pAge, pGender, pIndType, pPitchType);
+        part = new Participant(pNum, pAge, pGender/*, pIndType, pPitchType*/);
         Debug.Log(part.ToString());
-        //var file = SaveData.InitialSaveIntoJson(part);
+        var file = SaveData.InitialSaveIntoJson(part);
 
-        //persisData.participant = part;
-        //persisData.setFileNamePath(file[0], file[1]);
+        persisData.participant = part;
+        persisData.setFileNamePath(file[0], file[1]);
     }
 }

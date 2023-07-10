@@ -11,7 +11,7 @@ public class TestScript : MonoBehaviour
 
     //trials
     public int trial, totalTrials;
-
+    public PersistentData persData;
 
 
 
@@ -20,6 +20,10 @@ public class TestScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get persistent data
+        persData = FindObjectOfType<PersistentData>();
+
+
         // get data 
         //start timer
 
@@ -43,7 +47,7 @@ public class TestScript : MonoBehaviour
             //change panel from EndTrial to Experiment
             StartTrialPanel.SetActive(false);
 
-            //set up random attitude indicator  
+            //set up random attittude and attitude indicator  
 
             //start timer
 
@@ -51,10 +55,7 @@ public class TestScript : MonoBehaviour
 
             //detect if key is pressed to finish trial run
 
-            //save data of trial run
-
-
-
+           
             // change to question panel at the end of experiment
             QuestionPanelTrial.SetActive(true);
         }
@@ -65,12 +66,27 @@ public class TestScript : MonoBehaviour
         }
     }
 
-    // last trial activates this, still makes the last trial
+
     public void EndTrial()
+    // to be activated when KEY is pressed by player to finish trial run. //
+    {
+        // change to question panel at the end of experiment
+        QuestionPanelTrial.SetActive(true);
+
+
+        // 
+    }
+
+    // last trial activates this, still makes the last trial
+    public void EndTest()
     {
         // toggle off question panel trial, change to last question panel and save data, end experiment
         QuestionPanelTrial.SetActive(false);
         QuestionPanelFinal.SetActive(true);
+
+
+        //append persistent data to json; in this case we want to append each trial and feedback to the file
+        SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
     }
     
 }
