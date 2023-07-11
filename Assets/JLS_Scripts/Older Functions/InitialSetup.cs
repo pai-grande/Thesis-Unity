@@ -14,9 +14,11 @@ public class InitialSetup : MonoBehaviour
     //public Dropdown ddGend;
 
 
-    public void SetParticipantNumber(string num)
+    public void SetParticipantNumber()
     {
-        pNum = int.Parse(num);
+        //pNum = int.Parse(num);
+        // generate random number to be participant number
+        pNum = UnityEngine.Random.Range(1, 100);  // not to confuse with system.random
     }
 
     public void SetParticipantAge(string age)
