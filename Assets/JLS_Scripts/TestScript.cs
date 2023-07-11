@@ -12,6 +12,8 @@ public class TestScript : MonoBehaviour
     //trials
     public int trial, totalTrials;
     public PersistentData persData;
+    public string AttInd;
+    public Quaternion Att;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,11 @@ public class TestScript : MonoBehaviour
             StartTrialPanel.SetActive(false);
 
             //set up random attittude and attitude indicator  
+            AttInd = GenerateRandomAttitudeIndicator();
+            Att = GenerateRandomAttitude();
+
+
+
 
             //start timer
 
@@ -66,7 +73,7 @@ public class TestScript : MonoBehaviour
 
 
     public void EndTrial()
-    // to be activated when KEY is pressed by player to finish trial run. //
+    // Activated when KEY is pressed by player to finish trial run. 
     {
         //load questions after trial
         QuestionPanelTrial.SetActive(true);
@@ -75,16 +82,33 @@ public class TestScript : MonoBehaviour
 
     }
 
-    // last trial activates this
+    
     public void EndTest()
+    // Last trial activates this. Toggle off trial question panel, load last question panel, end experiment and save data.
     {
-        // toggle off question panel trial, change to last question panel and save data, end experiment
+        // Panels
         QuestionPanelTrial.SetActive(false);
         QuestionPanelFinal.SetActive(true);
 
 
-        //append persistent data to json; in this case we want to append each trial and feedback to the file 
+        // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
     }
-    
+
+
+    public string GenerateRandomAttitudeIndicator()
+    // Generate random attitude indicator, return C or PH.
+    {
+        string[] options = new string[] { "C", "PH" };
+        string AttIndicator = options[Random.Range(0, options.Length)];   // AttIndicator will contain string to print to JSON
+
+        return AttIndicator;
+    }
+
+
+    public Quaternion GenerateRandomAttitude()
+    // Generate random angles for pitch and roll, yaw remains null.
+    {
+        return Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), 0f);
+    }
 }
