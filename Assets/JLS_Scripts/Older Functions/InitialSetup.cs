@@ -13,8 +13,6 @@ public class InitialSetup : MonoBehaviour
     //private string pGender = "Male";
     //public Dropdown ddGend;
 
-    //public PersistentData persisData;
-
 
     public void SetParticipantNumber(string num)
     {
