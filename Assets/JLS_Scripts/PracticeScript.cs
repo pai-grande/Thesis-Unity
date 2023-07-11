@@ -10,6 +10,8 @@ public class PracticeScript : MonoBehaviour
     //public GameObject AttIndicatorN;
     public GameObject playercapsule;
     //public ChangeScene sceneLoad;
+    public GameObject MainMenuPanel;
+
 
     void Start()
     {
@@ -48,7 +50,8 @@ public class PracticeScript : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 //sceneLoad.LoadScene("MainMenu");
-                SceneManager.LoadScene("MainMenu");
+                MainMenuPanel.SetActive(true);
+
             }
          }
     }

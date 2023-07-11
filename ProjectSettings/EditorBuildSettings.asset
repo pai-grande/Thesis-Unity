@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: b4031fb19840adb428d527b553c6e52b
   - enabled: 1
-    path: Assets/Scenes/Practice Exec.unity
+    path: Assets/Scenes/Practice Session.unity
     guid: 34c2f0290f84a1542bd3608c0015eaa2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 37a367b83f5f516488a522f45506ea55,

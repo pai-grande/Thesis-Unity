@@ -13,10 +13,6 @@ public class TestScript : MonoBehaviour
     public int trial, totalTrials;
     public PersistentData persData;
 
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,18 +22,24 @@ public class TestScript : MonoBehaviour
 
         // get data 
         //start timer
-
-
-        trial = 1;
+        trial = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("End the trial run");
+            EndTrial();
+            
+        }
     }
 
-    public void StartButton()
+    public void StartTrial()
+    // applied to start button of the test.
+    // will load trial if there are more
+    // will end test if there are no more trials
     {
         if (trial <= totalTrials)
         {
@@ -53,16 +55,12 @@ public class TestScript : MonoBehaviour
 
             ////// TRIAL RUN //////
 
-            //detect if key is pressed to finish trial run
-
-           
-            // change to question panel at the end of experiment
-            QuestionPanelTrial.SetActive(true);
+            //detect if key is pressed to finish trial run on UPDATE
         }
-        // last trial
-        else //if (trial == totalTrials)
+ 
+        else 
         {
-            EndTrial();
+            EndTest();
         }
     }
 
@@ -70,14 +68,14 @@ public class TestScript : MonoBehaviour
     public void EndTrial()
     // to be activated when KEY is pressed by player to finish trial run. //
     {
-        // change to question panel at the end of experiment
+        //load questions after trial
         QuestionPanelTrial.SetActive(true);
 
+        //save trial data into file
 
-        // 
     }
 
-    // last trial activates this, still makes the last trial
+    // last trial activates this
     public void EndTest()
     {
         // toggle off question panel trial, change to last question panel and save data, end experiment
@@ -85,7 +83,7 @@ public class TestScript : MonoBehaviour
         QuestionPanelFinal.SetActive(true);
 
 
-        //append persistent data to json; in this case we want to append each trial and feedback to the file
+        //append persistent data to json; in this case we want to append each trial and feedback to the file 
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
     }
     
