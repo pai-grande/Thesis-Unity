@@ -10,10 +10,12 @@ public class TestScript : MonoBehaviour
 
 
     //trials
+    public Timer timer;
     public int trial, totalTrials;
     public PersistentData persData;
     public string AttInd;
-    public Quaternion Att;
+    public Quaternion startAtt;
+    public List<TrialData> expData;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class TestScript : MonoBehaviour
 
 
         // get data 
+        expData = new List<TrialData>();
+
         //start timer
         trial = 0;
     }
@@ -53,7 +57,7 @@ public class TestScript : MonoBehaviour
 
             //set up random attittude and attitude indicator  
             AttInd = GenerateRandomAttitudeIndicator();
-            Att = GenerateRandomAttitude();
+            startAtt = GenerateRandomAttitude();
 
 
 
@@ -79,6 +83,7 @@ public class TestScript : MonoBehaviour
         QuestionPanelTrial.SetActive(true);
 
         //save trial data into file
+        var trialData = new TrialData(trial, (startAtt[0], startAtt[1]), AttInd, timer.ElapTime);
 
     }
 
@@ -99,7 +104,7 @@ public class TestScript : MonoBehaviour
     public string GenerateRandomAttitudeIndicator()
     // Generate random attitude indicator, return C or PH.
     {
-        string[] options = new string[] { "C", "PH" };
+        string[] options = new string[] { "Control", "PseudoHaptic" };
         string AttIndicator = options[Random.Range(0, options.Length)];   // AttIndicator will contain string to print to JSON
 
         return AttIndicator;

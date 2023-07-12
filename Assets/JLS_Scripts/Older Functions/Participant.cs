@@ -31,14 +31,7 @@ public class Participant
     /// <param name="o">Study order</param>
     /// <param name="a">Age</param>
     /// <param name="g">Gender</param>
-    /// <param name="m">Medical condition</param>
-    /// <param name="widthLim">Min and Max width motor limit</param>
-    /// <param name="heightLim">Min and Max height motor limit</param>
-    /// <param name="maxPressW">Max pressure width</param>
-    /// <param name="maxPressH">Max pressure height</param>
-    /// <param name="ans">answers spatial assessement</param>
-    /// <param name="s">Spatial assessment Score</param>
-    /// <param name="at">Time taken for spatial assessment</param>
+
     public Participant(int n, int a, int g/*, int o, int p ,List<(int,bool)> ans*/)
     {
         num = n;

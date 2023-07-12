@@ -107,32 +107,32 @@ public struct SpatialAssessment
 }*/
 
 [Serializable]
-public struct OpeningSize
+public struct StartAttitude
 {
     [SerializeField]
-    public float width { get; }
+    public float Roll { get; }
     [SerializeField]
-    public float height { get; }
+    public float Pitch { get; }
 
-    public OpeningSize(float w,float h)
+    public StartAttitude(float r,float p)
     {
-        width = w;
-        height = h;
+        Roll = r;
+        Pitch = p;
     }
 }
 
 [Serializable]
-public struct AngleAttack
+public struct Attitude
 {
     [SerializeField]
     public float pitch { get; }
     [SerializeField]
-    public float yaw { get; }
+    public float roll { get; }
 
-    public AngleAttack(float p, float y)
+    public Attitude(float p, float r)
     {
         pitch = p;
-        yaw = y;
+        roll = r;
     }
 }
 
@@ -148,5 +148,11 @@ public struct DecisionTime
     {
         elapsedTime = et;
     }
+}
+
+public enum Condition
+{ 
+    Control,
+    PseudoHaptic
 }
  

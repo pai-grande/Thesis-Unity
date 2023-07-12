@@ -11,18 +11,14 @@ public class TrialData
     [SerializeField]
     public int trial;
     [SerializeField]
-    public OpeningSize opening; //opening(width, height)
+    public Attitude startAttitude; //attitude (pitch, roll)
     [SerializeField]
-    public AngleAttack angleAttack; //angleAttack(PITCH,YAW)
+    public Attitude finalAttitude; //attitude (pitch, roll)
     [SerializeField]
-    public bool choiceIsCorrect;
-    [SerializeField]
-    public DecisionTime decision;
-    //[SerializeField]
-    /*[JsonProperty]
-    [JsonConverter(typeof(StringEnumConverter))]*/
+    public Condition trialCondition; //control/PH attitude indicator
 
-    
+
+
     /// <summary>
     /// ExperimentData constructor
     /// </summary>
@@ -32,15 +28,14 @@ public class TrialData
     /// <param name="choice">GO/NOGO</param>
     /// <param name="valid">True/False if choice is correct according to opening size</param>
     /// <param name="elapTime">Time taken to make the go/nogo decision</param>
-    public TrialData(int t, OpeningSize o, AngleAttack aA, bool valid, float elapTime)
+    /// 
+
+    public TrialData(int t, Attitude sA, Attitude fA, Condition tC/*, float elapTime*/)
     {
         trial = t;
-        opening = o;
-        angleAttack = aA;
-        decision = new DecisionTime(/*choice,*/elapTime);
-        choiceIsCorrect = valid;
-
-        //YourEnum foo = (YourEnum)Enum.ToObject(typeof(YourEnum), yourInt);
+        startAttitude = sA;
+        finalAttitude = fA;
+        trialCondition = tC;
     }
 
     /// <summary>
