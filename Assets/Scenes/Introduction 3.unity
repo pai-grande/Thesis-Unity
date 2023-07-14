@@ -1427,7 +1427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &93672993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5210,11 +5210,13 @@ MonoBehaviour:
   QuestionPanelTrial: {fileID: 1561452845}
   QuestionPanelFinal: {fileID: 1394547212}
   StartTrialPanel: {fileID: 1453996507}
+  timer: {fileID: 0}
   trial: 0
   totalTrials: 5
   persData: {fileID: 1098409295}
   AttInd: 
-  Att: {x: 0, y: 0, z: 0, w: 0}
+  startAtt: {x: 0, y: 0, z: 0}
+  finalAtt: {x: 0, y: 0, z: 0}
   expData: []
 --- !u!4 &288471439
 Transform:
@@ -10241,7 +10243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &679096970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11887,7 +11889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &809225021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21477,7 +21479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: From 1 to 10, how difficult was to reach the desired attitude (did you
+  m_text: From 1 to 10, how uncertain was the desired attitude obtained (did you
     have to adjust your position or orientation too often)?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25113,7 +25115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1394547213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35390,8 +35392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Which attitude indicator did you find easier to interpret? (Control: 0,
-    Pseudo-Haptic: 1)
+  m_text: 'Which attitude indicator did you find easier to interpret?
 
 
 '

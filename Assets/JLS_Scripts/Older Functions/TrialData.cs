@@ -30,12 +30,12 @@ public class TrialData
     /// <param name="elapTime">Time taken to make the go/nogo decision</param>
     /// 
 
-    public TrialData(int t, Attitude sA, Attitude fA, Condition tC/*, float elapTime*/)
+    public TrialData(int t, Attitude sA, Attitude fA/*, Condition tC, float elapTime*/)
     {
         trial = t;
         startAttitude = sA;
         finalAttitude = fA;
-        trialCondition = tC;
+        //trialCondition = tC;
     }
 
     /// <summary>

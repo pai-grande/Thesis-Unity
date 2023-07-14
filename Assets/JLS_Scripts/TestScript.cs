@@ -14,8 +14,12 @@ public class TestScript : MonoBehaviour
     public int trial, totalTrials;
     public PersistentData persData;
     public string AttInd;
-    public Quaternion startAtt;
+    public Vector3 startAtt;
+    public Vector3 finalAtt;
+    public Attitude startAttitude;
+    public Attitude finalAttitude;
     public List<TrialData> expData;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +62,16 @@ public class TestScript : MonoBehaviour
             //set up random attittude and attitude indicator  
             AttInd = GenerateRandomAttitudeIndicator();
             startAtt = GenerateRandomAttitude();
+            //startAttitude.roll = startAtt.x;
+
+
+            //startAttitude = Attitude
+
+
+
+
+            //apply random rotation on pitch and roll
+            transform.rotation = Quaternion.Euler(startAtt);
 
 
 
@@ -82,8 +96,13 @@ public class TestScript : MonoBehaviour
         //load questions after trial
         QuestionPanelTrial.SetActive(true);
 
+        //get final rotation
+        finalAtt[0] = transform.rotation.x;
+        finalAtt[2] = transform.rotation.z;
+
+
         //save trial data into file
-        var trialData = new TrialData(trial, (startAtt[0], startAtt[1]), AttInd, timer.ElapTime);
+        var trialData = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2])/*, timer.ElapTime*/);
 
     }
 
@@ -111,9 +130,11 @@ public class TestScript : MonoBehaviour
     }
 
 
-    public Quaternion GenerateRandomAttitude()
+    public Vector3 GenerateRandomAttitude()
     // Generate random angles for pitch and roll, yaw remains null.
     {
-        return Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), 0f);
+        Vector3 randomAttitude = new Vector3(Random.Range(0f, 360f), 0f, Random.Range(0f, 360f));
+        return randomAttitude;
     }
+
 }
