@@ -8,6 +8,8 @@ public class Participant
 {
     [SerializeField]
     public int num, indType, gender, age, pitchType;
+    [SerializeField]
+    public List<Block> blocks;
     //[SerializeField]
     //public string gender;
     //[SerializeField]
@@ -21,7 +23,7 @@ public class Participant
         gender = -1;
         //indType = -1;
         //pitchType = -1;
-        //blocks = new List<Block>();
+        blocks = new List<Block>();
     }
 
     /// <summary>
@@ -39,12 +41,12 @@ public class Participant
         gender = g;
         //indType = o;
         //pitchType = p;
-        //blocks = new List<Block>();
+        blocks = new List<Block>();
     }
 
     public override string ToString() 
     {
         //return "Participant: " + num + "; " + age + "; " + gender + "; " + indType /*order*/ + "; " + pitchType + "; "; //+ blocks;
-        return "Participant: " + num + "; " + age + "; " + gender + "; "; //+ blocks;
+        return "Participant: " + num + "; " + age + "; " + gender + "; " + blocks;
     }
 }

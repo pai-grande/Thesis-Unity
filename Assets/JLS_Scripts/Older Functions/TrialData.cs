@@ -16,7 +16,8 @@ public class TrialData
     public Attitude finalAttitude; //attitude (pitch, roll)
     [SerializeField]
     public Condition trialCondition; //control/PH attitude indicator
-
+    [SerializeField]
+    public float trialTime; //control/PH attitude indicator
 
 
     /// <summary>
@@ -27,14 +28,15 @@ public class TrialData
     /// <param name="aA">Angle of Attack, first PITCH, second YAW</param>
     /// <param name="choice">GO/NOGO</param>
     /// <param name="valid">True/False if choice is correct according to opening size</param>
-    /// <param name="elapTime">Time taken to make the go/nogo decision</param>
+    /// <param name="elapTime">Time taken to orientate the robot
     /// 
 
-    public TrialData(int t, Attitude sA, Attitude fA/*, Condition tC, float elapTime*/)
+    public TrialData(int t, Attitude sA, Attitude fA/*, Condition tC, */, float elapTime)
     {
         trial = t;
         startAttitude = sA;
         finalAttitude = fA;
+        trialTime = elapTime;
         //trialCondition = tC;
     }
 

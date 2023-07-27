@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class TestScript : MonoBehaviour
 {
@@ -26,12 +27,12 @@ public class TestScript : MonoBehaviour
     {
         // get persistent data
         persData = FindObjectOfType<PersistentData>();
-
+        timer = GetComponent<Timer>();
 
         // get data 
         expData = new List<TrialData>();
 
-        //start timer
+
         trial = 0;
     }
 
@@ -40,7 +41,8 @@ public class TestScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("End the trial run");
+            Debug.Log("Ended the trial run");
+
             EndTrial();
             
         }
@@ -53,30 +55,20 @@ public class TestScript : MonoBehaviour
     {
         if (trial <= totalTrials)
         {
-            //add trial
-            trial++;
 
             //change panel from EndTrial to Experiment
             StartTrialPanel.SetActive(false);
 
-            //set up random attittude and attitude indicator  
+            //set up random attittude indicator  
             AttInd = GenerateRandomAttitudeIndicator();
+
+            //set up random attittude - apply random rotation on pitch and roll
             startAtt = GenerateRandomAttitude();
-            //startAttitude.roll = startAtt.x;
-
-
-            //startAttitude = Attitude
-
-
-
-
-            //apply random rotation on pitch and roll
             transform.rotation = Quaternion.Euler(startAtt);
-
-
-
-
+            
+   
             //start timer
+            timer.BeginTimer();
 
             ////// TRIAL RUN //////
 
@@ -93,20 +85,24 @@ public class TestScript : MonoBehaviour
     public void EndTrial()
     // Activated when KEY is pressed by player to finish trial run. 
     {
-        //load questions after trial
-        QuestionPanelTrial.SetActive(true);
-
         //get final rotation
         finalAtt[0] = transform.rotation.x;
         finalAtt[2] = transform.rotation.z;
+        
 
+        //save trial data 
+        var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), timer.elapTime);
+        expData.Add(trialD);
 
-        //save trial data into file
-        var trialData = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2])/*, timer.ElapTime*/);
+        //add trial
+        trial++;
+
+        //load questions after trial
+        QuestionPanelTrial.SetActive(true);
 
     }
 
-    
+
     public void EndTest()
     // Last trial activates this. Toggle off trial question panel, load last question panel, end experiment and save data.
     {
@@ -115,6 +111,8 @@ public class TestScript : MonoBehaviour
         QuestionPanelFinal.SetActive(true);
 
 
+        //add trial to persistent data
+        persData.participant.blocks.LastOrDefault().expData = expData;
         // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
     }

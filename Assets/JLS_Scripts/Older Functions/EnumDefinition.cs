@@ -5,19 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public enum Condition
+public enum Condition
 {
     Control,
-    Squeeze
+    PseudoHaptic
 }
 
-public enum Decision
-{
-    NoGo,
-    Go
-}
-
-public enum ConfidenceLevel
+public enum Q1 // confidence
 {
     Not_at_all,
     Somewhat,
@@ -26,100 +20,33 @@ public enum ConfidenceLevel
     Totally
 }
 
-public enum Clearance
+public enum Q2 // uncertainty
 {
-    No_space,
-    Tight,
-    Small,
-    Some,
-    Plenty
+    Not_at_all,
+    Somewhat,
+    Moderately,
+    Mostly,
+    Totally
 }
 
-public enum Axis
+public enum Q3 // frustration
 {
-    Width = 1,
-    Height = 2
+    Not_at_all,
+    Somewhat,
+    Moderately,
+    Mostly,
+    Totally
 }
 
-public enum DAction
+public enum Q4 // difficulty
 {
-    VerifyLimit = 1,
-    Threshold = 2,
-    SetReady = 3,
-    Pressure = 4
+    Not_at_all,
+    Somewhat,
+    Moderately,
+    Mostly,
+    Totally
 }
 
-/*public enum OpeningSide
-{
-    None,
-    Height,
-    Width
-}
-
-
-[Serializable]
-public struct MotorThreshold
-{
-    [SerializeField]
-    public (int lower, int upper) width { get; }
-    [SerializeField]
-    public (int lower, int upper) height { get; }
-
-    public MotorThreshold((int, int) widthlim, (int, int) heightlim)
-    {
-
-        width = widthlim;
-        height = heightlim;
-    }
-}
-
-[Serializable]
-/*public struct PressureThreshold
-{
-    [SerializeField]
-    public int maxWidth { get; }
-    [SerializeField]
-    public int maxHeight { get; }
-
-    public PressureThreshold(int maxW, int maxH)
-    {
-        maxWidth = maxW;
-        maxHeight = maxH;
-    }
-}
-
-    [Serializable]
-public struct SpatialAssessment
-{
-    [SerializeField]
-    public List<(int,bool)> answers { get; }
-    [SerializeField]
-    public int score { get; }
-    [SerializeField]
-    public float timeTaken { get; }
-
-    public SpatialAssessment(List<(int,bool)> ans, int s, float t)
-    {
-        answers = ans;
-        score = s;
-        timeTaken = t;
-    }
-}*/
-
-[Serializable]
-public struct StartAttitude
-{
-    [SerializeField]
-    public float Roll { get; }
-    [SerializeField]
-    public float Pitch { get; }
-
-    public StartAttitude(float r,float p)
-    {
-        Roll = r;
-        Pitch = p;
-    }
-}
 
 [Serializable]
 public struct Attitude
@@ -150,9 +77,17 @@ public struct DecisionTime
     }
 }
 
-public enum Condition
-{ 
-    Control,
-    PseudoHaptic
-}
- 
+/*[Serializable]
+public struct StartAttitude
+{
+    [SerializeField]
+    public float Roll { get; }
+    [SerializeField]
+    public float Pitch { get; }
+
+    public StartAttitude(float r,float p)
+    {
+        Roll = r;
+        Pitch = p;
+    }
+}*/
