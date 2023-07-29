@@ -44,6 +44,9 @@ public class TestScript : MonoBehaviour
         //set study order random
         persData.setStudyOrder(Random.Range(0, 2));
 
+        
+
+
 
         trial = 1;
     }
@@ -53,13 +56,16 @@ public class TestScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            Debug.Log(persData.currentCondition);
             // TIMER ---- stop timer ----
             timer.StopTimer();
 
             Debug.Log("Ended the trial run");
 
+            // CONDITION  ---- check if it has to change ----
 
-            if (trial < totalTrials)
+
+            if (trial <= totalTrials)
             {
                 
                 EndTrial();
@@ -87,11 +93,11 @@ public class TestScript : MonoBehaviour
             StartTrialPanel.SetActive(false);
 
             //ATTITUDE INDICATOR ---- set up random attittude indicator ----
-            AttInd = GenerateRandomAttitudeIndicator();
+            //AttInd = GenerateRandomAttitudeIndicator();
 
-            //ATTITUDE ---- set up random attittude - apply random rotation on pitch and roll ----
+            //ATTITUDE ---- set up random attittude - apply random rotation on pitch and roll ---- //Player.transform.rotation = Quaternion.Euler(startAtt); 
             startAtt = GenerateRandomAttitude();
-            //Player.transform.rotation = Quaternion.Euler(startAtt);
+            
             Player.transform.Rotate(startAtt/*, Space.World*/);
             
    
@@ -132,7 +138,7 @@ public class TestScript : MonoBehaviour
         expData.Add(trialD);
 
         //
-        var block = new Block(/*persData.currentCondition, elapTime*/);
+        var block = new Block(persData.currentCondition/*, elapTime*/);
         persData.participant.blocks.Add(block);
         //
 
@@ -140,10 +146,22 @@ public class TestScript : MonoBehaviour
         persData.participant.blocks.LastOrDefault().expData = expData;
         // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
+        Debug.Log(persData.isFirstBlock);
+        if (persData.isFirstBlock)
+        {
+            persData.changeCondition();
+            trial = 0;
+            StartTrialPanel.SetActive(true);
 
+        }
 
-        // Panels
-        QuestionPanelFinal.SetActive(true);
+        else 
+        {
+            // Panels
+            QuestionPanelFinal.SetActive(true);
+        }
+
+        
     }
 
 

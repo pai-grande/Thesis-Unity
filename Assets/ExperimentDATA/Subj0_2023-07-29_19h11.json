@@ -1,0 +1,53 @@
+{
+  "num": 0,
+  "indType": 0,
+  "gender": 0,
+  "age": 0,
+  "pitchType": 0,
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 46.1909447,
+            "roll": 297.9167
+          },
+          "finalAttitude": {
+            "pitch": 316.815125,
+            "roll": 297.9167
+          },
+          "trialCondition": 0,
+          "trialTime": 0.6740799
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 359.792847,
+            "roll": 151.288239
+          },
+          "finalAttitude": {
+            "pitch": 316.7184,
+            "roll": 89.03269
+          },
+          "trialCondition": 0,
+          "trialTime": 0.4142065
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 216.2352,
+            "roll": 196.262833
+          },
+          "finalAttitude": {
+            "pitch": 316.7184,
+            "roll": 89.03269
+          },
+          "trialCondition": 0,
+          "trialTime": 0.4122877
+        }
+      ]
+    }
+  ]
+}

@@ -44,12 +44,12 @@ public class PersistentData : MonoBehaviour
             }
             isFirstBlock = false;
         }
+    }
 
 
-
-        public void setFileNamePath(string fpath, string fname)
+    public void setFileNamePath(string fpath, string fname)
     {
         fileName = fname;
         filePath = fpath;
     }
-}
+}               
