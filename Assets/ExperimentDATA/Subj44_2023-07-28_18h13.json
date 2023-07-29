@@ -1,0 +1,39 @@
+{
+  "num": 44,
+  "indType": 0,
+  "gender": 0,
+  "age": 0,
+  "pitchType": 0,
+  "blocks": [
+    {
+      "expData": [
+        {
+          "trial": 0,
+          "startAttitude": {
+            "pitch": 321.2371,
+            "roll": 293.595673
+          },
+          "finalAttitude": {
+            "pitch": -0.277678162,
+            "roll": -0.5165627
+          },
+          "trialCondition": 0,
+          "trialTime": 0.0
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 321.2371,
+            "roll": 293.595673
+          },
+          "finalAttitude": {
+            "pitch": -0.277678162,
+            "roll": -0.5165627
+          },
+          "trialCondition": 0,
+          "trialTime": 0.0
+        }
+      ]
+    }
+  ]
+}

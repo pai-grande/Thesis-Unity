@@ -5210,14 +5210,20 @@ MonoBehaviour:
   QuestionPanelTrial: {fileID: 1561452845}
   QuestionPanelFinal: {fileID: 1394547212}
   StartTrialPanel: {fileID: 1453996507}
-  timer: {fileID: 0}
+  timer: {fileID: 1533734096}
   trial: 0
-  totalTrials: 5
+  totalTrials: 1
   persData: {fileID: 1098409295}
   AttInd: 
   startAtt: {x: 0, y: 0, z: 0}
   finalAtt: {x: 0, y: 0, z: 0}
-  expData: []
+  expData:
+  - trial: 0
+    trialCondition: 0
+    trialTime: 0
+  - trial: 0
+    trialCondition: 0
+    trialTime: 0
 --- !u!4 &288471439
 Transform:
   m_ObjectHideFlags: 0
@@ -8768,16 +8774,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: DestroyPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1561452845}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Questions 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: LoadPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1453996507}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &526476693
@@ -10243,7 +10261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &679096970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10251,12 +10269,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679096969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eb3510340f1bf8479b18b715c909e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 300
+  timeRemaining: 5
   timerIsRunning: 0
   playercapsule: {fileID: 2080202631}
   MainMenuPanel: {fileID: 809225020}
@@ -11889,7 +11907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &809225021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13632,16 +13650,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: DestroyPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 970673291}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Experiment
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: LoadPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1453996507}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &926401657
@@ -13764,7 +13794,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 943723103}
-  - component: {fileID: 943723104}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -13789,25 +13818,10 @@ Transform:
   - {fileID: 288471439}
   - {fileID: 2071438054}
   - {fileID: 1098409296}
+  - {fileID: 1533734095}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &943723104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943723102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eb3510340f1bf8479b18b715c909e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRemaining: 5
-  timerIsRunning: 0
-  playercapsule: {fileID: 0}
-  MainMenuPanel: {fileID: 0}
 --- !u!1 &945849508
 GameObject:
   m_ObjectHideFlags: 0
@@ -15803,6 +15817,7 @@ MonoBehaviour:
     gender: -1
     age: -1
     pitchType: 0
+    blocks: []
 --- !u!4 &1098409296
 Transform:
   m_ObjectHideFlags: 0
@@ -26163,7 +26178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1453996508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27292,6 +27307,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532956643}
   m_CullTransparentMesh: 1
+--- !u!1 &1533734094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533734095}
+  - component: {fileID: 1533734096}
+  m_Layer: 0
+  m_Name: Timer Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533734095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533734094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 943723103}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1533734096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533734094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0710b43bd1fba44b81277bd2a89cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 500
+  timerIsRunning: 0
+  elapTime: 0
+  gameObj: {fileID: 0}
 --- !u!1 &1535869937
 GameObject:
   m_ObjectHideFlags: 0
@@ -32637,13 +32700,25 @@ MonoBehaviour:
           m_StringArgument: Introduction 3
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: DestroyPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1309605960}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2071438055}
+        m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
+        m_MethodName: LoadPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 970673291}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33843,7 +33918,7 @@ MonoBehaviour:
         m_MethodName: LoadPanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1423223434}
+          m_ObjectArgument: {fileID: 1309605960}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

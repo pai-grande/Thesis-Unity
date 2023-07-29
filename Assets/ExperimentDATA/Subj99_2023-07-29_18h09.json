@@ -1,0 +1,65 @@
+{
+  "num": 99,
+  "indType": 0,
+  "gender": 0,
+  "age": 0,
+  "pitchType": 0,
+  "blocks": [
+    {
+      "expData": [
+        {
+          "trial": 0,
+          "startAttitude": {
+            "pitch": 143.815857,
+            "roll": 83.90264
+          },
+          "finalAttitude": {
+            "pitch": 5.28775644,
+            "roll": 306.29425
+          },
+          "trialCondition": 0,
+          "trialTime": 2.65932178
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 68.68827,
+            "roll": 6.05526924
+          },
+          "finalAttitude": {
+            "pitch": 6.987508,
+            "roll": 237.046722
+          },
+          "trialCondition": 0,
+          "trialTime": 1.61409378
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 11.9610643,
+            "roll": 46.67725
+          },
+          "finalAttitude": {
+            "pitch": 48.1197,
+            "roll": 208.242859
+          },
+          "trialCondition": 0,
+          "trialTime": 1.08231735
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 63.8172073,
+            "roll": 83.5373
+          },
+          "finalAttitude": {
+            "pitch": 48.1197,
+            "roll": 208.242859
+          },
+          "trialCondition": 0,
+          "trialTime": 1.2721405
+        }
+      ]
+    }
+  ]
+}

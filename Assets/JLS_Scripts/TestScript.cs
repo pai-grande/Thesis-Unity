@@ -20,6 +20,7 @@ public class TestScript : MonoBehaviour
     public Attitude startAttitude;
     public Attitude finalAttitude;
     public List<TrialData> expData;
+    public GameObject Player;
 
 
     // Start is called before the first frame update
@@ -27,13 +28,24 @@ public class TestScript : MonoBehaviour
     {
         // get persistent data
         persData = FindObjectOfType<PersistentData>();
-        timer = GetComponent<Timer>();
+
+        //get timer
+        timer = FindObjectOfType<Timer>();
+
+        //get player
+        Player = GameObject.Find("Player_Capsule");
+
+
+        //Player_Capsule player = GameObject.GetComponent<Player_Capsule>();
 
         // get data 
         expData = new List<TrialData>();
 
+        //set study order random
+        persData.setStudyOrder(Random.Range(0, 2));
 
-        trial = 0;
+
+        trial = 1;
     }
 
     // Update is called once per frame
@@ -41,10 +53,28 @@ public class TestScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            // TIMER ---- stop timer ----
+            timer.StopTimer();
+
             Debug.Log("Ended the trial run");
 
-            EndTrial();
-            
+
+            if (trial < totalTrials)
+            {
+                
+                EndTrial();
+
+                //PANEL ---- load questions after trial ----
+                QuestionPanelTrial.SetActive(true);
+            }
+
+            else
+            {
+                Debug.Log("Ended Test");
+                //EndTrial();
+                EndTest();
+                
+            }            
         }
     }
 
@@ -53,41 +83,34 @@ public class TestScript : MonoBehaviour
     // will load trial if there are more
     // will end test if there are no more trials
     {
-        if (trial <= totalTrials)
-        {
-
-            //change panel from EndTrial to Experiment
+            //PANEL ---- change panel from EndTrial to Experiment ----
             StartTrialPanel.SetActive(false);
 
-            //set up random attittude indicator  
+            //ATTITUDE INDICATOR ---- set up random attittude indicator ----
             AttInd = GenerateRandomAttitudeIndicator();
 
-            //set up random attittude - apply random rotation on pitch and roll
+            //ATTITUDE ---- set up random attittude - apply random rotation on pitch and roll ----
             startAtt = GenerateRandomAttitude();
-            transform.rotation = Quaternion.Euler(startAtt);
+            //Player.transform.rotation = Quaternion.Euler(startAtt);
+            Player.transform.Rotate(startAtt/*, Space.World*/);
             
    
-            //start timer
+            //TIMER ---- start timer
             timer.BeginTimer();
 
             ////// TRIAL RUN //////
 
             //detect if key is pressed to finish trial run on UPDATE
-        }
- 
-        else 
-        {
-            EndTest();
-        }
     }
+    
 
 
     public void EndTrial()
     // Activated when KEY is pressed by player to finish trial run. 
     {
         //get final rotation
-        finalAtt[0] = transform.rotation.x;
-        finalAtt[2] = transform.rotation.z;
+        finalAtt[0] = Player.transform.eulerAngles.x;
+        finalAtt[2] = Player.transform.eulerAngles.z;
         
 
         //save trial data 
@@ -98,23 +121,29 @@ public class TestScript : MonoBehaviour
         trial++;
 
         //load questions after trial
-        QuestionPanelTrial.SetActive(true);
-
+        //QuestionPanelTrial.SetActive(true);
     }
 
 
     public void EndTest()
     // Last trial activates this. Toggle off trial question panel, load last question panel, end experiment and save data.
     {
-        // Panels
-        QuestionPanelTrial.SetActive(false);
-        QuestionPanelFinal.SetActive(true);
+        var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), timer.elapTime);
+        expData.Add(trialD);
 
+        //
+        var block = new Block(/*persData.currentCondition, elapTime*/);
+        persData.participant.blocks.Add(block);
+        //
 
         //add trial to persistent data
         persData.participant.blocks.LastOrDefault().expData = expData;
         // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
+
+
+        // Panels
+        QuestionPanelFinal.SetActive(true);
     }
 
 
@@ -135,4 +164,19 @@ public class TestScript : MonoBehaviour
         return randomAttitude;
     }
 
+
+    public void LoadAndDestroy_AfterQuestions(int trial, int totalTrials)
+    {
+        if (trial <= totalTrials)
+        {
+            QuestionPanelTrial.SetActive(false);
+            StartTrialPanel.SetActive(true);
+        }
+
+        else
+        {
+            QuestionPanelTrial.SetActive(false);
+            QuestionPanelFinal.SetActive(true);
+        }
+    }
 }
