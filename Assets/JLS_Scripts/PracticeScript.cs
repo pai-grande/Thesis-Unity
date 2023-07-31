@@ -4,21 +4,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PracticeScript : MonoBehaviour
 {
-    public float timeRemaining = 5;
+    
     public bool timerIsRunning = false;
     //public GameObject AttIndicatorPH;
     //public GameObject AttIndicatorN;
-    public GameObject playercapsule;
+    public GameObject Player;
     //public ChangeScene sceneLoad;
-    public GameObject MainMenuPanel;
+    public GameObject TestSessionPanel;
+    public PracticeScript practiceScript;
+    public float timeRemaining = 5;
+    public bool timerFirst = true;
 
 
-    void Start()
+    public void StartTimer()
+    {
+        Player = GameObject.Find("Player_Capsule");
+        timerIsRunning = true;
+
+        Player.transform.Rotate(45f, 45f, 0f, Space.Self);
+    }
+
+    /*void Start()
     {
         // Starts the timer when scene is loaded
-        timerIsRunning = true;
+        
+        practiceScript = GetComponent<PracticeScript>();
         //sceneLoad = GetComponent<ChangeScene>();
-    }
+    }*/
     void Update()
     {
         if (timerIsRunning)
@@ -33,7 +45,7 @@ public class PracticeScript : MonoBehaviour
                 {
                     //AttIndicatorPH.SetActive(true);
                     //AttIndicatorN.SetActive(false);
-                    playercapsule.SetActive(true);
+                    Player.SetActive(true);
                 }
 
                         // toggle Normal Attitude Indicator with key 
@@ -41,16 +53,16 @@ public class PracticeScript : MonoBehaviour
                 {
                     //AttIndicatorPH.SetActive(false);
                     //AttIndicatorN.SetActive(true);
-                    playercapsule.SetActive(false);
+                    Player.SetActive(false);
                 }
             }
             else
             {
                 Debug.Log("Time has run out!");
-                timeRemaining = 0;
+                timeRemaining = 5;
                 timerIsRunning = false;
                 //sceneLoad.LoadScene("MainMenu");
-                MainMenuPanel.SetActive(true);
+                TestSessionPanel.SetActive(true);
 
             }
          }

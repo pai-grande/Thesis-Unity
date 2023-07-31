@@ -7,7 +7,7 @@ public class TestScript : MonoBehaviour
 {
 
     // mudar de scenes
-    public GameObject QuestionPanelTrial, QuestionPanelFinal, StartTrialPanel;
+    public GameObject QuestionPanelTrial, QuestionPanelFinal, StartTrialPanel, PracticePanel;
 
 
     //trials
@@ -150,8 +150,11 @@ public class TestScript : MonoBehaviour
         if (persData.isFirstBlock)
         {
             persData.changeCondition();
+            /////////////////////////////
+            // change attitude indicators
+            /////////////////////////////
             trial = 0;
-            StartTrialPanel.SetActive(true);
+            PracticePanel.SetActive(true); // aqui mudar do start trial panel para o practicepanel
 
         }
 
