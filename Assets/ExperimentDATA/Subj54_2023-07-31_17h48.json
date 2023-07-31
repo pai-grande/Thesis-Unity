@@ -1,0 +1,202 @@
+{
+  "num": 54,
+  "order": 0,
+  "indType": 0,
+  "gender": 0,
+  "age": 2,
+  "pitchType": 0,
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.623383,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 9.011844
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 201.932037,
+            "roll": 171.540512
+          },
+          "finalAttitude": {
+            "pitch": 67.44377,
+            "roll": 351.540527
+          },
+          "trialCondition": 0,
+          "trialTime": 3.404623
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 330.298584,
+            "roll": 187.112381
+          },
+          "finalAttitude": {
+            "pitch": 67.44377,
+            "roll": 351.540527
+          },
+          "trialCondition": 0,
+          "trialTime": 0.775589
+        },
+        {
+          "trial": 0,
+          "startAttitude": {
+            "pitch": 100.078087,
+            "roll": 41.7582169
+          },
+          "finalAttitude": {
+            "pitch": 297.94574,
+            "roll": 226.834457
+          },
+          "trialCondition": 0,
+          "trialTime": 1.20366287
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 57.277607,
+            "roll": 110.331291
+          },
+          "finalAttitude": {
+            "pitch": 311.647034,
+            "roll": 79.3765259
+          },
+          "trialCondition": 0,
+          "trialTime": 0.582393646
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 113.97541,
+            "roll": 326.244049
+          },
+          "finalAttitude": {
+            "pitch": 24.5560036,
+            "roll": 12.1416712
+          },
+          "trialCondition": 0,
+          "trialTime": 0.455635071
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 107.059769,
+            "roll": 116.962914
+          },
+          "finalAttitude": {
+            "pitch": 24.5560036,
+            "roll": 12.1416712
+          },
+          "trialCondition": 0,
+          "trialTime": 0.265008926
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.623383,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 9.011844
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 201.932037,
+            "roll": 171.540512
+          },
+          "finalAttitude": {
+            "pitch": 67.44377,
+            "roll": 351.540527
+          },
+          "trialCondition": 0,
+          "trialTime": 3.404623
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 330.298584,
+            "roll": 187.112381
+          },
+          "finalAttitude": {
+            "pitch": 67.44377,
+            "roll": 351.540527
+          },
+          "trialCondition": 0,
+          "trialTime": 0.775589
+        },
+        {
+          "trial": 0,
+          "startAttitude": {
+            "pitch": 100.078087,
+            "roll": 41.7582169
+          },
+          "finalAttitude": {
+            "pitch": 297.94574,
+            "roll": 226.834457
+          },
+          "trialCondition": 0,
+          "trialTime": 1.20366287
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 57.277607,
+            "roll": 110.331291
+          },
+          "finalAttitude": {
+            "pitch": 311.647034,
+            "roll": 79.3765259
+          },
+          "trialCondition": 0,
+          "trialTime": 0.582393646
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 113.97541,
+            "roll": 326.244049
+          },
+          "finalAttitude": {
+            "pitch": 24.5560036,
+            "roll": 12.1416712
+          },
+          "trialCondition": 0,
+          "trialTime": 0.455635071
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 107.059769,
+            "roll": 116.962914
+          },
+          "finalAttitude": {
+            "pitch": 24.5560036,
+            "roll": 12.1416712
+          },
+          "trialCondition": 0,
+          "trialTime": 0.265008926
+        }
+      ]
+    }
+  ]
+}

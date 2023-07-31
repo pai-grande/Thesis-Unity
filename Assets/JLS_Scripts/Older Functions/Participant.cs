@@ -7,7 +7,7 @@ using UnityEngine;
 public class Participant
 {
     [SerializeField]
-    public int num, indType, gender, age, pitchType;
+    public int num, order, indType, gender, age, pitchType;
     [SerializeField]
     public List<Block> blocks;
     //[SerializeField]
@@ -19,6 +19,7 @@ public class Participant
     public Participant()
     {
         num = -1;
+        order = -1;
         age = -1;
         gender = -1;
         //indType = -1;
@@ -34,9 +35,10 @@ public class Participant
     /// <param name="a">Age</param>
     /// <param name="g">Gender</param>
 
-    public Participant(int n, int a, int g/*, int o, int p ,List<(int,bool)> ans*/)
+    public Participant(int n, int o, int a, int g/*, int o, int p ,List<(int,bool)> ans*/)
     {
         num = n;
+        order = o;
         age = a;
         gender = g;
         //indType = o;
@@ -47,6 +49,6 @@ public class Participant
     public override string ToString() 
     {
         //return "Participant: " + num + "; " + age + "; " + gender + "; " + indType /*order*/ + "; " + pitchType + "; "; //+ blocks;
-        return "Participant: " + num + "; " + age + "; " + gender + "; " + blocks;
+        return "Participant: " + num + "; " + order + "; " + age + "; " + gender + "; " + blocks;
     }
 }
