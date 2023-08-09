@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class InitialSetup : MonoBehaviour
 {
     private Participant part;
-    private int pNum, pAge, pGender, pIndType, pPitchType, studyOrd;
+    private int pNum, pAge, pGender, studyOrd, pUnderwater, pJoystick;
     public PersistentData persisData;
 
     //private string pGender = "Male";
@@ -39,6 +39,17 @@ public class InitialSetup : MonoBehaviour
         // male = 0; female = 1;
     }
 
+    public void SetParticipantUnderwater(string underwater)
+    {
+        pUnderwater = int.Parse(underwater);
+    }
+
+    public void SetParticipantJoystick(string joystick)
+    {
+        pJoystick = int.Parse(joystick);
+    }
+
+
     /*public void SetParticipantIndicatorTypeControl()
     {
         //pIndType = int.Parse(indType);
@@ -68,7 +79,7 @@ public class InitialSetup : MonoBehaviour
 
     public void CreateParticipant()
     {
-        part = new Participant(pNum, studyOrd, pAge, pGender/*, pIndType, pPitchType*/);
+        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick/*, pIndType, pPitchType*/);
         Debug.Log(part.ToString());
         var file = SaveData.InitialSaveIntoJson(part);
 

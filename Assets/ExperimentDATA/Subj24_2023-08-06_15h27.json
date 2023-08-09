@@ -1,0 +1,54 @@
+{
+  "num": 24,
+  "order": 1,
+  "indType": 0,
+  "gender": 0,
+  "age": 0,
+  "pitchType": 0,
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 177.825119,
+            "roll": 145.385925
+          },
+          "finalAttitude": {
+            "pitch": 87.82535,
+            "roll": 145.385941
+          },
+          "trialCondition": 0,
+          "trialTime": 3.36121559
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 218.2648,
+            "roll": 186.949738
+          },
+          "finalAttitude": {
+            "pitch": 310.070831,
+            "roll": 188.86879
+          },
+          "trialCondition": 0,
+          "trialTime": 1.8231926
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 220.608231,
+            "roll": 62.33291
+          },
+          "finalAttitude": {
+            "pitch": 310.070831,
+            "roll": 188.86879
+          },
+          "trialCondition": 0,
+          "trialTime": 1.60665894
+        }
+      ]
+    }
+  ]
+}

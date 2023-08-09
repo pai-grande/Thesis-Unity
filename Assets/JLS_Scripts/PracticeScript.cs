@@ -14,6 +14,7 @@ public class PracticeScript : MonoBehaviour
     public PracticeScript practiceScript;
     public float timeRemaining = 5;
     public bool timerFirst = true;
+    
 
 
     public void StartTimer()
@@ -21,7 +22,13 @@ public class PracticeScript : MonoBehaviour
         Player = GameObject.Find("Player_Capsule");
         timerIsRunning = true;
 
-        Player.transform.Rotate(45f, 45f, 0f, Space.Self);
+        var practiceAhead = transform.eulerAngles;
+        practiceAhead.x = -90;
+
+        Player.transform.eulerAngles = practiceAhead;
+        //Player.transform.Rotate(startAtt/*, Space.World*/);
+        //Player.transform.Rotate(45f, 45f, 0f, Space.Self);
+        //Player.transform.rotation = Quaternion.identity;
     }
 
     /*void Start()

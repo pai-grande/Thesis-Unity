@@ -44,8 +44,9 @@ public class TestScript : MonoBehaviour
         //set study order random
         persData.setStudyOrder(Random.Range(0, 2));
 
-        
 
+
+        //transform.rotation = Quaternion.identity;
 
 
         trial = 1;
@@ -72,6 +73,7 @@ public class TestScript : MonoBehaviour
 
                 //PANEL ---- load questions after trial ----
                 QuestionPanelTrial.SetActive(true);
+                //transform.rotation = Quaternion.identity;
             }
 
             else
@@ -79,7 +81,8 @@ public class TestScript : MonoBehaviour
                 Debug.Log("Ended Test");
                 //EndTrial();
                 EndTest();
-                
+                //transform.rotation = Quaternion.identity;
+
             }            
         }
     }
@@ -96,10 +99,12 @@ public class TestScript : MonoBehaviour
             //AttInd = GenerateRandomAttitudeIndicator();
 
             //ATTITUDE ---- set up random attittude - apply random rotation on pitch and roll ---- //Player.transform.rotation = Quaternion.Euler(startAtt); 
-            startAtt = GenerateRandomAttitude();
-            
-            Player.transform.Rotate(startAtt/*, Space.World*/);
-            
+            //startAtt = GenerateRandomAttitude();
+            startAtt = new Vector3(0f, 90f, 0f);
+
+            //Player.transform.Rotate(startAtt/*, Space.World*/);
+            Player.transform.eulerAngles = startAtt;
+            Debug.Log(startAtt);
    
             //TIMER ---- start timer
             timer.BeginTimer();
@@ -117,7 +122,13 @@ public class TestScript : MonoBehaviour
         //get final rotation
         finalAtt[0] = Player.transform.eulerAngles.x;
         finalAtt[2] = Player.transform.eulerAngles.z;
-        
+
+
+
+        Debug.Log("player transform euler angles " + Player.transform.eulerAngles);
+        Debug.Log("player transform euler angles separado x y z " + Player.transform.eulerAngles.x + Player.transform.eulerAngles.y + Player.transform.eulerAngles.z);
+        Debug.Log("final att 0" + finalAtt[0]);
+        Debug.Log("final att 2" + finalAtt[2]);
 
         //save trial data 
         var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), timer.elapTime);
@@ -125,6 +136,9 @@ public class TestScript : MonoBehaviour
 
         //add trial
         trial++;
+
+        //reset attitude to normal
+
 
         //load questions after trial
         //QuestionPanelTrial.SetActive(true);
@@ -153,7 +167,7 @@ public class TestScript : MonoBehaviour
             /////////////////////////////
             // change attitude indicators
             /////////////////////////////
-            trial = 0;
+            trial = 1;
             PracticePanel.SetActive(true); // aqui mudar do start trial panel para o practicepanel
 
         }
