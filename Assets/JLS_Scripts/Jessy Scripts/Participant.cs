@@ -7,11 +7,11 @@ using UnityEngine;
 public class Participant
 {
     [SerializeField]
-    public int num, order, indType, gender, age, pitchType, underwater, joystick;
+    public int num, order, indType, age, pitchType, underwater, joystick;
     [SerializeField]
     public List<Block> blocks;
-    //[SerializeField]
-    //public string gender;
+    [SerializeField]
+    public string gender;
     //[SerializeField]
     //public List<Block> blocks;
 
@@ -21,7 +21,7 @@ public class Participant
         num = -1;
         order = -1;
         age = -1;
-        gender = -1;
+        gender = " ";
         //indType = -1;
         //pitchType = -1;
         underwater = -1;
@@ -37,7 +37,7 @@ public class Participant
     /// <param name="a">Age</param>
     /// <param name="g">Gender</param>
 
-    public Participant(int n, int o, int a, int g, int u, int j/*, int o, int p ,List<(int,bool)> ans*/)
+    public Participant(int n, int o, int a, string g, int u, int j/*, int o, int p ,List<(int,bool)> ans*/)
     {
         num = n;
         order = o;

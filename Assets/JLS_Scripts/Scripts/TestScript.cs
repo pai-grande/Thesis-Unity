@@ -9,6 +9,9 @@ public class TestScript : MonoBehaviour
     // mudar de scenes
     public GameObject QuestionPanelTrial, QuestionPanelFinal, StartTrialPanel, PracticePanel;
 
+    // buttons
+    public ButtonsGroupController firstGrp, secGrp;//, thirdGrp, fourthGrp;
+    public List<bool> firstGrpButton, secGrpButton, thirdGrpButton, fourthGrpButton;
 
     //trials
     public Timer timer;
@@ -26,28 +29,21 @@ public class TestScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // get persistent data
+        // get persistent data, timer, player and trial data
         persData = FindObjectOfType<PersistentData>();
-
-        //get timer
         timer = FindObjectOfType<Timer>();
-
-        //get player
         Player = GameObject.Find("Player_Capsule");
+        expData = new List<TrialData>();
+        persData.setStudyOrder(Random.Range(0, 2));
+
+        var btngroupCon = QuestionPanelTrial.transform.GetComponentsInChildren<ButtonsGroupController>();
+        firstGrp = btngroupCon[0];
+        secGrp = btngroupCon[1];
+        
 
 
         //Player_Capsule player = GameObject.GetComponent<Player_Capsule>();
-
-        // get data 
-        expData = new List<TrialData>();
-
-        //set study order random
-        persData.setStudyOrder(Random.Range(0, 2));
-
-
-
         //transform.rotation = Quaternion.identity;
-
 
         trial = 1;
     }
@@ -73,6 +69,19 @@ public class TestScript : MonoBehaviour
 
                 //PANEL ---- load questions after trial ----
                 QuestionPanelTrial.SetActive(true);
+
+                int active1 = firstGrp.GetNumberActive();
+                Debug.Log(active1);
+                firstGrpButton = firstGrp.GetListActiveButtons();
+                foreach (bool x in firstGrpButton)
+                {
+                    Debug.Log(x);
+                }
+                //secGrpButton = secGrp.GetListActiveButtons();
+                //Debug.Log(secGrpButton);
+                //thirdGrpButton = thirdGrp.GetActiveButton();
+                //Debug.Log(thirdGrpButton);
+                
                 //transform.rotation = Quaternion.identity;
             }
 
@@ -125,10 +134,10 @@ public class TestScript : MonoBehaviour
 
 
 
-        Debug.Log("player transform euler angles " + Player.transform.eulerAngles);
+        /*Debug.Log("player transform euler angles " + Player.transform.eulerAngles);
         Debug.Log("player transform euler angles separado x y z " + Player.transform.eulerAngles.x + Player.transform.eulerAngles.y + Player.transform.eulerAngles.z);
         Debug.Log("final att 0" + finalAtt[0]);
-        Debug.Log("final att 2" + finalAtt[2]);
+        Debug.Log("final att 2" + finalAtt[2]);*/
 
         //save trial data 
         var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), timer.elapTime);

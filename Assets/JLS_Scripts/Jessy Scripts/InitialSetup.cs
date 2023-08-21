@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InitialSetup : MonoBehaviour
 {
     private Participant part;
-    private int pNum, pAge, pGender, studyOrd, pUnderwater, pJoystick;
+    private int pNum, pAge, studyOrd, pUnderwater, pJoystick;
     public PersistentData persisData;
+    //public Dropdown ddGend;
+    //private string pGender = "Male";
+    public string pGender;
+    //[SerializeField] private TMP_Text _txtResponse;
+    [SerializeField] private TMP_Dropdown _gender;
 
     //private string pGender = "Male";
     //public Dropdown ddGend;
-
-
+    
     public void SetParticipantNumber()
     {
         //pNum = int.Parse(num);
@@ -32,11 +37,26 @@ public class InitialSetup : MonoBehaviour
         pAge = int.Parse(age);
     }
 
-    public void SetParticipantGender(string gender)
+    public void SetParticipantGender()
     {
-        pGender = int.Parse(gender);
+        switch (_gender.value) {
+            case 0:
+                pGender = "Female";
+                break;
+            case 1:
+                pGender = "Male";
+                break;
+            case 2:
+                pGender = "Non-Binary";
+                break;
+            case 3:
+                pGender = "Other";
+                break;
+        }
+        //pGender = int.Parse(gender);
+        //gender = GetComponent<Dropdown>();
         //pGender = ddGend.options[gender].text;
-        // male = 0; female = 1;
+        
     }
 
     public void SetParticipantUnderwater(string underwater)
