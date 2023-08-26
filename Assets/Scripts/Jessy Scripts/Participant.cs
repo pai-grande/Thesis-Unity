@@ -9,12 +9,9 @@ public class Participant
     [SerializeField]
     public int num, order, indType, age, pitchType, underwater, joystick;
     [SerializeField]
-    public List<Block> blocks;
-    [SerializeField]
     public string gender;
-    //[SerializeField]
-    //public List<Block> blocks;
-
+    [SerializeField]
+    public List<Block> blocks;
 
     public Participant()
     {
@@ -22,20 +19,20 @@ public class Participant
         order = -1;
         age = -1;
         gender = " ";
-        //indType = -1;
-        //pitchType = -1;
         underwater = -1;
         joystick = -1;
         blocks = new List<Block>();
     }
 
     /// <summary>
-    /// 
+    /// Participant Constructor
     /// </summary>
     /// <param name="n">Participant number</param>
     /// <param name="o">Study order</param>
     /// <param name="a">Age</param>
     /// <param name="g">Gender</param>
+    /// <param name="j">Joystick choice</param>
+    /// <param name="u">Underwater Proficiency</param>
 
     public Participant(int n, int o, int a, string g, int u, int j/*, int o, int p ,List<(int,bool)> ans*/)
     {
@@ -45,8 +42,6 @@ public class Participant
         gender = g;
         underwater = u;
         joystick = j;
-        //indType = o;
-        //pitchType = p;
         blocks = new List<Block>();
     }
 

@@ -1,0 +1,178 @@
+{
+  "num": 0,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.9457092
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.7884579
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.7415199
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.575573
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.880901337
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.6283493
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.9457092
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.7884579
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.7415199
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.575573
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.880901337
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.6283493
+        }
+      ]
+    }
+  ],
+  "gender": "Male"
+}

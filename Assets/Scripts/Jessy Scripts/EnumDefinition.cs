@@ -11,43 +11,6 @@ public enum Condition
     PseudoHaptic
 }
 
-public enum Q1 // confidence
-{
-    Not_at_all,
-    Somewhat,
-    Moderately,
-    Mostly,
-    Totally
-}
-
-public enum Q2 // uncertainty
-{
-    Not_at_all,
-    Somewhat,
-    Moderately,
-    Mostly,
-    Totally
-}
-
-public enum Q3 // frustration
-{
-    Not_at_all,
-    Somewhat,
-    Moderately,
-    Mostly,
-    Totally
-}
-
-public enum Q4 // difficulty
-{
-    Not_at_all,
-    Somewhat,
-    Moderately,
-    Mostly,
-    Totally
-}
-
-
 [Serializable]
 public struct Attitude
 {
@@ -78,16 +41,13 @@ public struct DecisionTime
 }
 
 /*[Serializable]
-public struct StartAttitude
+public struct AttitudeQuat
 {
     [SerializeField]
-    public float Roll { get; }
-    [SerializeField]
-    public float Pitch { get; }
+    public Quaternion AttitudeQ { get; }
 
-    public StartAttitude(float r,float p)
+    public AttitudeQuat(Quaternion q)
     {
-        Roll = r;
-        Pitch = p;
+        AttitudeQ = q;
     }
 }*/

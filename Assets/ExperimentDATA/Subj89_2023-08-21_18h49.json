@@ -1,0 +1,99 @@
+{
+  "num": 89,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": []
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.23559
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.70273209
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.1451149
+        },
+        {
+          "trial": 1,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 5.753517
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 1.27507019
+        },
+        {
+          "trial": 3,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.826477051
+        }
+      ]
+    }
+  ],
+  "gender": "Male"
+}

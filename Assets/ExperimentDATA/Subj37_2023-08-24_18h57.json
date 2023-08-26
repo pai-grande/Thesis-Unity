@@ -1,0 +1,222 @@
+{
+  "num": 37,
+  "order": 1,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 5,
+  "joystick": 5,
+  "gender": "Male",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 0.924825668,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 0.704092,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 1.45903015,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 0.924825668,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 0.704092,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 1.45903015,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 0.924825668,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 0.704092,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "trialCondition": 0,
+          "trialTime": 1.45903015,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "trialCondition": 0,
+          "trialTime": 1.5655632,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

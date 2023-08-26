@@ -1,0 +1,74 @@
+{
+  "num": 13,
+  "order": 1,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 335.3786
+          },
+          "trialCondition": 0,
+          "trialTime": 13.2506351
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.46704483
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 335.3786
+          },
+          "trialCondition": 0,
+          "trialTime": 13.2506351
+        },
+        {
+          "trial": 2,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "trialCondition": 0,
+          "trialTime": 0.46704483
+        }
+      ]
+    }
+  ],
+  "gender": "Male"
+}
