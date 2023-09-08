@@ -1,0 +1,95 @@
+{
+  "num": 53,
+  "order": 0,
+  "indType": 0,
+  "age": 22,
+  "pitchType": 0,
+  "underwater": 4,
+  "joystick": 10,
+  "gender": "Male",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 0,
+          "trialTime": 1.46980286,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 1,
+          "confidence": 10,
+          "certainty": 10,
+          "frustration": 10,
+          "workload": 10,
+          "trialCondition": 1,
+          "trialTime": 2.85151672,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 0,
+          "trialTime": 1.46980286,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 1,
+          "confidence": 10,
+          "certainty": 10,
+          "frustration": 10,
+          "workload": 10,
+          "trialCondition": 1,
+          "trialTime": 2.85151672,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

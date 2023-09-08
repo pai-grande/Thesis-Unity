@@ -22,6 +22,8 @@ public class TrialData
     public Attitude startAttitude; //attitude (pitch, roll)
     [SerializeField]
     public Attitude finalAttitude; //attitude (pitch, roll)
+    [SerializeField]
+    public string indicator; 
 
     //[SerializeField]
     //public Quaternion startAttitudeQuat;
@@ -55,11 +57,12 @@ public class TrialData
     /// <param name="c">Decision confidence level</param>
     /// <param name="wC">Perceived width clearance of the Opening</param>
     /// <param name="hC">Perceived width clearance of the Opening</param>
-    public void AddPostQuest(int q1, int q2, int q3, int q4)
+    public void AddPostQuest(int q1, int q2, int q3, int q4, string choice)
     {
         confidence = q1; 
         certainty = q2; 
         frustration = q3;
         workload = q4;
+        indicator = choice;
     }
 }

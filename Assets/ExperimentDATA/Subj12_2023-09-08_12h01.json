@@ -1,0 +1,103 @@
+{
+  "num": 12,
+  "order": 1,
+  "indType": 0,
+  "age": 222,
+  "pitchType": 0,
+  "underwater": 5,
+  "joystick": 5,
+  "gender": "Non-Binary",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": []
+    },
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 7,
+          "certainty": 7,
+          "frustration": 7,
+          "workload": 7,
+          "trialCondition": 0,
+          "trialTime": 1.79265022,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 1,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 1,
+          "trialTime": 1.27040482,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": []
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 7,
+          "certainty": 7,
+          "frustration": 7,
+          "workload": 7,
+          "trialCondition": 0,
+          "trialTime": 1.79265022,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 1,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 1,
+          "trialTime": 1.27040482,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

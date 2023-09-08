@@ -1,0 +1,51 @@
+{
+  "num": 93,
+  "order": 1,
+  "indType": 0,
+  "age": 22,
+  "pitchType": 0,
+  "underwater": 6,
+  "joystick": 6,
+  "gender": "Male",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 6,
+          "certainty": 6,
+          "frustration": 6,
+          "workload": 6,
+          "trialCondition": 0,
+          "trialTime": 1.28026962,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.9951248,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

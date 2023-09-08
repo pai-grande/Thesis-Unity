@@ -9,6 +9,7 @@ public class PracticeScript : MonoBehaviour
     //public GameObject AttIndicatorPH;
     //public GameObject AttIndicatorN;
     public GameObject Player;
+    public PersistentData persData;
     //public ChangeScene sceneLoad;
     public GameObject TestSessionPanel;
     public PracticeScript practiceScript;
@@ -20,7 +21,10 @@ public class PracticeScript : MonoBehaviour
     public void StartTimer()
     {
         Player = GameObject.Find("Player_Capsule");
+        //persData = FindObjectOfType<PersistentData>();
         timerIsRunning = true;
+        //var block = new Block(persData.currentCondition/*, elapTime*/);
+       //persData.participant.blocks.Add(block);
 
         var practiceAhead = transform.eulerAngles;
         practiceAhead.x = -90;
@@ -48,20 +52,20 @@ public class PracticeScript : MonoBehaviour
                 //Debug.Log(timeRemaining);
 
                         // toggle PH Attitude Indicator with key
-                if (Input.GetKeyDown(KeyCode.A))
-                {
+                //if (Input.GetKeyDown(KeyCode.A))
+                //{
                     //AttIndicatorPH.SetActive(true);
                     //AttIndicatorN.SetActive(false);
-                    Player.SetActive(true);
-                }
+                   // Player.SetActive(true);
+                //}
 
                         // toggle Normal Attitude Indicator with key 
-                if (Input.GetKeyDown(KeyCode.D))
-                {
+                //if (Input.GetKeyDown(KeyCode.D))
+               // {
                     //AttIndicatorPH.SetActive(false);
                     //AttIndicatorN.SetActive(true);
-                    Player.SetActive(false);
-                }
+                 //   Player.SetActive(false);
+               // }
             }
             else
             {

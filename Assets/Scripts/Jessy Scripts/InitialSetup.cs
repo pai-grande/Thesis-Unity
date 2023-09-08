@@ -69,7 +69,7 @@ public class InitialSetup : MonoBehaviour
 
     public void CreateParticipant()
     {
-        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick/*, pIndType, pPitchType*/);
+        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick, ""/*, pIndType, pPitchType*/);
         Debug.Log(part.ToString());
         var file = SaveData.InitialSaveIntoJson(part);
 

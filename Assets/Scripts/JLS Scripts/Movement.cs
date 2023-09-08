@@ -44,17 +44,17 @@ public class Movement : MonoBehaviour {
             GetComponent<Rigidbody>().AddForce(Vector3.left * 0.05f, ForceMode.VelocityChange);
 
         if (Input.GetKeyDown(KeyCode.W)) 
-            GetComponent<Rigidbody>().AddTorque(new Vector3(0.01f, 0f, 0f));
+            GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0.01f, 0f, 0f));
 
         if (Input.GetKeyDown(KeyCode.S))
-            GetComponent<Rigidbody>().AddTorque(new Vector3(-0.01f, 0f, 0f));
+            GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(-0.01f, 0f, 0f));
 
         if (Input.GetKeyDown(KeyCode.A))
-            GetComponent<Rigidbody>().AddTorque(new Vector3(0f, 0f, 0.01f));
+            GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0f, 0f, 0.01f));
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            GetComponent<Rigidbody>().AddTorque(new Vector3(0f, 0f, -0.01f));
+            GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0f, 0f, -0.01f));
 /*
             ParticleSystem.Particle[] particles = new ParticleSystem.Particle[ps.particleCount];
             ps.GetParticles(particles);

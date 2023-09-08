@@ -1,0 +1,158 @@
+{
+  "num": 3,
+  "order": 1,
+  "indType": 0,
+  "age": 23,
+  "pitchType": 0,
+  "underwater": 5,
+  "joystick": 5,
+  "gender": "Non-Binary",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 5,
+          "frustration": 5,
+          "workload": 5,
+          "trialCondition": 0,
+          "trialTime": 1.2271843,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "confidence": 5,
+          "certainty": 8,
+          "frustration": 8,
+          "workload": 8,
+          "trialCondition": 0,
+          "trialTime": 1.14331436,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 8,
+          "frustration": 8,
+          "workload": 8,
+          "trialCondition": 1,
+          "trialTime": 0.984005,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.633152,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 5,
+          "frustration": 5,
+          "workload": 5,
+          "trialCondition": 0,
+          "trialTime": 1.2271843,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "confidence": 5,
+          "certainty": 8,
+          "frustration": 8,
+          "workload": 8,
+          "trialCondition": 0,
+          "trialTime": 1.14331436,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 8,
+          "frustration": 8,
+          "workload": 8,
+          "trialCondition": 1,
+          "trialTime": 0.984005,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.633152,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

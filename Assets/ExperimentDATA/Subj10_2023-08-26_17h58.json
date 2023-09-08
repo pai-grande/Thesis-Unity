@@ -1,0 +1,51 @@
+{
+  "num": 10,
+  "order": 0,
+  "indType": 0,
+  "age": 22,
+  "pitchType": 0,
+  "underwater": 5,
+  "joystick": 5,
+  "gender": "Non-Binary",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 5,
+          "frustration": 5,
+          "workload": 5,
+          "trialCondition": 0,
+          "trialTime": 3.99180031,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 1.25174332,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

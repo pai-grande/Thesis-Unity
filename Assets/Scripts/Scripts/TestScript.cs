@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using TMPro;
 
 public class TestScript : MonoBehaviour
 {
 
     // mudar de scenes
-    public GameObject QuestionPanelTrial, QuestionPanelFinal, StartTrialPanel, PracticePanel;
+    public GameObject QuestionPanelTrial, QuestionPanelTrial2, QuestionPanelFinal, StartTrialPanel, PracticePanel;
+    
 
     // buttons
     //public ButtonsGroupController firstGrp, secGrp;//, thirdGrp, fourthGrp;
@@ -15,7 +18,8 @@ public class TestScript : MonoBehaviour
 
     //trials
     public Timer timer;
-    public int trial, totalTrials;
+    public bool needsPractice;
+    public int trial, totalTrials, trialsLeft;
     public PersistentData persData;
     public string AttInd;
     public Vector3 startAtt;
@@ -24,18 +28,23 @@ public class TestScript : MonoBehaviour
     //public Attitude finalAttitude;
     public List<TrialData> expData;
     public GameObject Player;
+    public string choice;
     //public Quaternion startAttQ;
     //public Quaternion finalAttQ;
 
+    public TMP_Text counterText;
+    
 
     //question feedback
     public int answer1, answer2, answer3, answer4, answer5;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         // get persistent data, timer, player and trial data
+        needsPractice = true;
         persData = FindObjectOfType<PersistentData>();
         timer = FindObjectOfType<Timer>();
         Player = GameObject.Find("Player_Capsule");
@@ -55,10 +64,14 @@ public class TestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        trialsLeft = (totalTrials - trial + 1);
+        counterText.SetText("Trials left:     " + trialsLeft);
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             timer.StopTimer();
             Debug.Log("Ended the trial run");
+            //Debug.Log(persist)
 
 
             if (trial <  totalTrials)
@@ -72,7 +85,6 @@ public class TestScript : MonoBehaviour
             else
             {
                 Debug.Log("Ended test for this attitude indicator");
-
                 EndTest();
 
 
@@ -139,14 +151,17 @@ public class TestScript : MonoBehaviour
     // Last trial activates this. Toggle off trial question panel, load last question panel, end experiment and save data.
     {
         //var trialD = new TrialData(trial, new AttitudeQuat(startAttQ), new AttitudeQuat(finalAttQ), timer.elapTime);
-        var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), persData.currentCondition, timer.elapTime);
-        expData.Add(trialD);
+        //var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), persData.currentCondition, timer.elapTime);
+        //expData.Add(trialD);
 
-        //
+        //isto e no prsctice
         var block = new Block(persData.currentCondition/*, elapTime*/);
         persData.participant.blocks.Add(block);
-        //
 
+
+
+        //
+        persData.participant.indicatorChoice = choice;
         //add trial to persistent data
         persData.participant.blocks.LastOrDefault().expData = expData;
         // Append persistent data to json;
@@ -159,7 +174,7 @@ public class TestScript : MonoBehaviour
             // change attitude indicators
             /////////////////////////////
             trial = 1;
-            PracticePanel.SetActive(true); 
+            QuestionPanelTrial.SetActive(true); 
 
         }
 
@@ -172,6 +187,31 @@ public class TestScript : MonoBehaviour
         
     }
 
+
+    public void LastTrialPanelManager()
+    {
+        QuestionPanelTrial2.SetActive(false);
+
+        if (persData.isFirstBlock)
+        {
+            StartTrialPanel.SetActive(true);
+        }
+
+        else
+        {
+            if (needsPractice)
+            {
+                PracticePanel.SetActive(true);
+                needsPractice = false;
+                Debug.Log("ativou o needsPractice");
+            }
+
+            else
+            {
+                StartTrialPanel.SetActive(true);
+            }
+        }
+    }
 
     public string GenerateRandomAttitudeIndicator()
     // Generate random attitude indicator, return C or PH.
@@ -208,7 +248,7 @@ public class TestScript : MonoBehaviour
 
     public void AddPostQuestLastButton()
     {
-        expData.Last().AddPostQuest(answer1, answer2, answer3, answer4);
+        expData.Last().AddPostQuest(answer1, answer2, answer3, answer4, choice);
 
     }
 
@@ -412,5 +452,13 @@ public class TestScript : MonoBehaviour
         answer4 = 10;
     }
 
+    public void IndicatorChoiceNormal()
+    {
+        choice = "Normal";
+    }
 
+    public void IndicatorChoicePH()
+    {
+        choice = "Pseudo-Haptic";
+    }
 }
