@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Proj_JLS_saved.unity
     guid: 3228ff04588bfaf46b8315f2f2f8c408
   - enabled: 0
@@ -26,10 +26,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scenes/Experiment.unity
     guid: a1be077ceeb9f3f43a862788e00172b7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: b4031fb19840adb428d527b553c6e52b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Practice Session.unity
     guid: 34c2f0290f84a1542bd3608c0015eaa2
   m_configObjects:

@@ -1,0 +1,95 @@
+{
+  "num": 6,
+  "order": 1,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 1,
+  "joystick": 1,
+  "gender": "Male",
+  "indicatorChoice": "Normal",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 1,
+          "certainty": 1,
+          "frustration": 1,
+          "workload": 1,
+          "trialCondition": 1,
+          "trialTime": 0.942909241,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 1,
+          "trialTime": 1.09036446,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 2,
+          "certainty": 2,
+          "frustration": 2,
+          "workload": 2,
+          "trialCondition": 0,
+          "trialTime": 1.2839241,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 4,
+          "certainty": 4,
+          "frustration": 4,
+          "workload": 4,
+          "trialCondition": 0,
+          "trialTime": 1.1812439,
+          "startAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "roll": 0.0
+          },
+          "indicator": "Normal"
+        }
+      ]
+    }
+  ]
+}

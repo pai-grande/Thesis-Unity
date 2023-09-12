@@ -26,21 +26,15 @@ public class AttitudeRotation : MonoBehaviour
     // Update
     void Update()
     {
-        var attitude = new Vector3();//attitudeSub.SubscribedVector;
-       
-        roll.transform.eulerAngles = new Vector3(0.0f, 0.0f, -attitude.z); //have to negate the roll, of how the indicator shows banked
-      
-        pitch.transform.Rotate(new Vector3(lastPitch - attitude.x, 0.0f, 0.0f), Space.Self);
-        
-        lastPitch = attitude.x;
+
         
     }
 
     public void GetAttitude(Vector3 attitude)
     {
-        roll.transform.eulerAngles = new Vector3(0.0f, 0.0f, -attitude.z); //have to negate the roll, of how the indicator shows banked
+        roll.transform.localEulerAngles = new Vector3(0.0f, 0.0f, -attitude.z); //have to negate the roll, of how the indicator shows banked
 
-        pitch.transform.Rotate(new Vector3(lastPitch - attitude.x, 0.0f, 0.0f), Space.Self);
+        pitch.transform.Rotate(new Vector3((lastPitch - attitude.x)/*-90*/, 0.0f, 0.0f), Space.Self);
 
         lastPitch = attitude.x;
     }

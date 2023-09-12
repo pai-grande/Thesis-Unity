@@ -9,6 +9,7 @@ public class PracticeScript : MonoBehaviour
     //public GameObject AttIndicatorPH;
     //public GameObject AttIndicatorN;
     public GameObject Player;
+    public GameObject Objects;
     public PersistentData persData;
     //public ChangeScene sceneLoad;
     public GameObject TestSessionPanel;
@@ -21,15 +22,22 @@ public class PracticeScript : MonoBehaviour
     public void StartTimer()
     {
         Player = GameObject.Find("Player_Capsule");
-        //persData = FindObjectOfType<PersistentData>();
+        //Objects = GameObject.Find("Objects");
+        Objects.SetActive(true);
+
+
+        persData = FindObjectOfType<PersistentData>();
+        var block = new Block(persData.currentCondition/*, elapTime*/);
+        persData.participant.blocks.Add(block);
+
         timerIsRunning = true;
-        //var block = new Block(persData.currentCondition/*, elapTime*/);
-       //persData.participant.blocks.Add(block);
 
-        var practiceAhead = transform.eulerAngles;
-        practiceAhead.x = -90;
+        //var practiceAhead = transform.eulerAngles;//////////////////////
+        //practiceAhead.x = -90;
+        //Player.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
 
-        Player.transform.eulerAngles = practiceAhead;
+
+        //Player.transform.eulerAngles = practiceAhead;////////////////////////// estava isto
         //Player.transform.Rotate(startAtt/*, Space.World*/);
         //Player.transform.Rotate(45f, 45f, 0f, Space.Self);
         //Player.transform.rotation = Quaternion.identity;
@@ -49,30 +57,16 @@ public class PracticeScript : MonoBehaviour
             if (timeRemaining > 0) 
             {
                 timeRemaining -= Time.deltaTime;
-                //Debug.Log(timeRemaining);
-
-                        // toggle PH Attitude Indicator with key
-                //if (Input.GetKeyDown(KeyCode.A))
-                //{
-                    //AttIndicatorPH.SetActive(true);
-                    //AttIndicatorN.SetActive(false);
-                   // Player.SetActive(true);
-                //}
-
-                        // toggle Normal Attitude Indicator with key 
-                //if (Input.GetKeyDown(KeyCode.D))
-               // {
-                    //AttIndicatorPH.SetActive(false);
-                    //AttIndicatorN.SetActive(true);
-                 //   Player.SetActive(false);
-               // }
+                Objects.SetActive(true);
             }
             else
             {
                 Debug.Log("Time has run out!");
                 timeRemaining = 5;
                 timerIsRunning = false;
-                //sceneLoad.LoadScene("MainMenu");
+
+                Objects.SetActive(false);
+
                 TestSessionPanel.SetActive(true);
 
             }

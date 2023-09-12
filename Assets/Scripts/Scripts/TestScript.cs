@@ -8,20 +8,14 @@ using TMPro;
 public class TestScript : MonoBehaviour
 {
 
-    // mudar de scenes
-    public GameObject QuestionPanelTrial, QuestionPanelTrial2, QuestionPanelFinal, StartTrialPanel, PracticePanel;
+    // scenes
+    public GameObject QuestionPanelTrial, QuestionPanelTrial2, QuestionPanelFinal, StartTrialPanel, PracticePanel, LastQuestionPanel;
     
-
-    // buttons
-    //public ButtonsGroupController firstGrp, secGrp;//, thirdGrp, fourthGrp;
-    //public List<bool> firstGrpButton, secGrpButton, thirdGrpButton, fourthGrpButton;
-
     //trials
     public Timer timer;
     public bool needsPractice;
     public int trial, totalTrials, trialsLeft;
     public PersistentData persData;
-    public string AttInd;
     public Vector3 startAtt;
     public Vector3 finalAtt;
     //public Attitude startAttitude;
@@ -71,10 +65,11 @@ public class TestScript : MonoBehaviour
         {
             timer.StopTimer();
             Debug.Log("Ended the trial run");
+            EndTrial();
             //Debug.Log(persist)
 
 
-            if (trial <  totalTrials)
+            /*if (trial <  totalTrials)
             {
                 EndTrial();
 
@@ -88,7 +83,7 @@ public class TestScript : MonoBehaviour
                 EndTest();
 
 
-            }            
+            }*/            
         }
     }
 
@@ -107,10 +102,17 @@ public class TestScript : MonoBehaviour
             //Player.transform.eulerAngles = startAtt;
             //Debug.Log(startAtt);
 
-            float pitch = Random.Range(-180f, 180f);
-            float roll = Random.Range(-180f, 180f);
-            Player.transform.rotation = Quaternion.AngleAxis(roll, Vector3.forward);
-            Player.transform.rotation = Quaternion.AngleAxis(pitch, Vector3.right);
+
+
+            Player.transform.Rotate(0.0f, 90f, 0.0f, Space.Self);
+            
+
+            
+
+            //float pitch = Random.Range(-180f, 180f);
+            //float roll = Random.Range(-180f, 180f);
+            //Player.transform.rotation = Quaternion.AngleAxis(roll, Vector3.forward);
+            //Player.transform.rotation = Quaternion.AngleAxis(pitch, Vector3.right);
             //startAttQ = Player.transform.rotation;
             Player.transform.eulerAngles = startAtt;
             //Debug.Log(startAttQ);
@@ -137,10 +139,10 @@ public class TestScript : MonoBehaviour
         //var trialD = new TrialData(trial, new AttitudeQuat(startAttQ), new AttitudeQuat(finalAttQ), timer.elapTime);
         var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), persData.currentCondition, timer.elapTime);
         expData.Add(trialD);
+        QuestionPanelTrial.SetActive(true);
 
         //add trial
-        trial++;
-
+        //trial++;
 
         //reset attitude to normal
 
@@ -155,10 +157,8 @@ public class TestScript : MonoBehaviour
         //expData.Add(trialD);
 
         //isto e no prsctice
-        var block = new Block(persData.currentCondition/*, elapTime*/);
-        persData.participant.blocks.Add(block);
-
-
+        //var block = new Block(persData.currentCondition/*, elapTime*/);
+        //persData.participant.blocks.Add(block);
 
         //
         persData.participant.indicatorChoice = choice;
@@ -167,6 +167,9 @@ public class TestScript : MonoBehaviour
         // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
 
+        //////
+        //QuestionPanelTrial.SetActive(true);
+
         if (persData.isFirstBlock)
         {
             persData.changeCondition();
@@ -174,14 +177,17 @@ public class TestScript : MonoBehaviour
             // change attitude indicators
             /////////////////////////////
             trial = 1;
-            QuestionPanelTrial.SetActive(true); 
+            expData = new List<TrialData>();
+            PracticePanel.SetActive(true);
+            //QuestionPanelTrial.SetActive(true); 
 
         }
 
         else 
         {
             // Panels
-            QuestionPanelFinal.SetActive(true);
+            //QuestionPanelFinal.SetActive(true);
+            LastQuestionPanel.SetActive(true);
         }
 
         
@@ -208,7 +214,7 @@ public class TestScript : MonoBehaviour
 
             else
             {
-                StartTrialPanel.SetActive(true);
+                LastQuestionPanel.SetActive(true);
             }
         }
     }
@@ -249,6 +255,21 @@ public class TestScript : MonoBehaviour
     public void AddPostQuestLastButton()
     {
         expData.Last().AddPostQuest(answer1, answer2, answer3, answer4, choice);
+
+        if (trial < totalTrials)
+        {
+            trial++;
+            StartTrialPanel.SetActive(true);
+            //QuestionPanelTrial.SetActive(true);
+
+        }
+
+        else
+        {
+            Debug.Log("Ended test for this attitude indicator");
+            EndTest();
+
+        }
 
     }
 
