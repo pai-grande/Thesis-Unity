@@ -1,0 +1,95 @@
+{
+  "num": 105,
+  "order": 1,
+  "indType": 0,
+  "age": 23,
+  "underwater": 4,
+  "joystick": 4,
+  "gender": "Non-Binary",
+  "pitchType": "NormalPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 5,
+          "frustration": 5,
+          "workload": 5,
+          "trialCondition": 1,
+          "trialTime": 1.10993576,
+          "startAttitude": {
+            "pitch": 48.0,
+            "roll": 152.0
+          },
+          "finalAttitude": {
+            "pitch": 48.0000038,
+            "roll": 151.999985
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 6,
+          "certainty": 6,
+          "frustration": 6,
+          "workload": 6,
+          "trialCondition": 1,
+          "trialTime": 0.8482628,
+          "startAttitude": {
+            "pitch": 35.0,
+            "roll": 123.0
+          },
+          "finalAttitude": {
+            "pitch": 35.0000076,
+            "roll": 123.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 6,
+          "certainty": 8,
+          "frustration": 8,
+          "workload": 8,
+          "trialCondition": 0,
+          "trialTime": 0.967670441,
+          "startAttitude": {
+            "pitch": 278.999969,
+            "roll": 91.99998
+          },
+          "finalAttitude": {
+            "pitch": 278.999969,
+            "roll": 91.99998
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 9,
+          "certainty": 9,
+          "frustration": 9,
+          "workload": 9,
+          "trialCondition": 0,
+          "trialTime": 0.6260071,
+          "startAttitude": {
+            "pitch": 72.9999847,
+            "roll": 77.00001
+          },
+          "finalAttitude": {
+            "pitch": 72.9999847,
+            "roll": 77.00001
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

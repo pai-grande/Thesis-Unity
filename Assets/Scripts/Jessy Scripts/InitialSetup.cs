@@ -10,12 +10,8 @@ public class InitialSetup : MonoBehaviour
 {
     private Participant part;
     private int pNum, pAge, studyOrd, pUnderwater, pJoystick;
-    public string pGender;
+    public string pGender, pPitchType;
     public PersistentData persisData;
-
-    public ButtonsGroupController buttonControllerUnderwater;
-    public ButtonsGroupController buttonControllerJoystick;
-
 
     [SerializeField] private TMP_Dropdown _gender;
 
@@ -54,22 +50,10 @@ public class InitialSetup : MonoBehaviour
         }
     }
 
-    public void SetParticipantUnderwater()
-    {
-        pUnderwater = buttonControllerUnderwater.GetActiveButton();
-    }
-
-
-
-    public void SetParticipantJoystick()
-    {
-        pJoystick = buttonControllerJoystick.GetActiveButton();
-    }
-
 
     public void CreateParticipant()
     {
-        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick, ""/*, pIndType, pPitchType*/);
+        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick, pPitchType, ""/*, pIndType, pPitchType*/);
         Debug.Log(part.ToString());
         var file = SaveData.InitialSaveIntoJson(part);
 
@@ -179,5 +163,13 @@ public class InitialSetup : MonoBehaviour
         pJoystick = 10;
     }
 
+    public void pitchNormal()
+    {
+        pPitchType = "NormalPitch";
+    }
 
+    public void pitchInverted()
+    {
+        pPitchType = "InvertedPitch";
+    }
 }

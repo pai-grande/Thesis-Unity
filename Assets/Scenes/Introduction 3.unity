@@ -26746,6 +26746,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 942307913}
+        m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
+        m_MethodName: CreateParticipant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &926401657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27099,9 +27111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pGender: Male
+  pPitchType: 
   persisData: {fileID: 1098409295}
-  buttonControllerUnderwater: {fileID: 0}
-  buttonControllerJoystick: {fileID: 0}
   _gender: {fileID: 1973451485}
 --- !u!114 &942307915
 MonoBehaviour:
@@ -29019,18 +29030,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 942307913}
-        m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
-        m_MethodName: CreateParticipant
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Introduction 3
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2071438055}
         m_TargetAssemblyTypeName: PanelSceneManager, Assembly-CSharp
         m_MethodName: DestroyPanel
@@ -31054,6 +31053,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 942307913}
+        m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
+        m_MethodName: pitchInverted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1068504853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31998,10 +32009,10 @@ MonoBehaviour:
     order: -1
     indType: 0
     age: -1
-    pitchType: 0
     underwater: -1
     joystick: -1
     gender: 
+    pitchType: 
     indicatorChoice: ' '
     blocks: []
   isFirstBlock: 0
@@ -62047,9 +62058,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pGender: Male
+  pPitchType: 
   persisData: {fileID: 0}
-  buttonControllerUnderwater: {fileID: 0}
-  buttonControllerJoystick: {fileID: 0}
   _gender: {fileID: 1973451485}
 --- !u!1 &1988797852
 GameObject:
@@ -62908,9 +62918,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 942307913}
         m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
-        m_MethodName: SetParticipantPitchTypeNonInverted
+        m_MethodName: pitchNormal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

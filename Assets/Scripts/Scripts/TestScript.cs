@@ -81,7 +81,7 @@ public class TestScript : MonoBehaviour
 
 
 
-            Player.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
+            Player.transform.Rotate(Random.Range(0,181), 0.0f, Random.Range(0,181), Space.Self);
 
             startAttQ = Player.transform.rotation;
             startAtt = startAttQ.eulerAngles;
@@ -95,7 +95,7 @@ public class TestScript : MonoBehaviour
             //Player.transform.rotation = Quaternion.AngleAxis(roll, Vector3.forward);
             //Player.transform.rotation = Quaternion.AngleAxis(pitch, Vector3.right);
             //startAttQ = Player.transform.rotation;
-            Player.transform.eulerAngles = startAtt;
+            //Player.transform.eulerAngles = startAtt;
             //Debug.Log(startAttQ);
 
             //TIMER ---- start timer
@@ -162,44 +162,6 @@ public class TestScript : MonoBehaviour
         
     }
 
-
-    /*public void LastTrialPanelManager()
-    {
-        QuestionPanelTrial2.SetActive(false);
-
-        if (persData.isFirstBlock)
-        {
-            StartTrialPanel.SetActive(true);
-        }
-
-        else
-        {
-            if (needsPractice)
-            {
-                PracticePanel.SetActive(true);
-                needsPractice = false;
-                Debug.Log("ativou o needsPractice");
-            }
-
-            else
-            {
-                LastQuestionPanel.SetActive(true);
-            }
-        }
-    }*/
-
- 
-
-    public string GenerateRandomAttitudeIndicator()
-    // Generate random attitude indicator, return C or PH.
-    {
-        string[] options = new string[] { "Control", "PseudoHaptic" };
-        string AttIndicator = options[Random.Range(0, options.Length)];   // AttIndicator will contain string to print to JSON
-
-        return AttIndicator;
-    }
-
-
     public Vector3 GenerateRandomAttitude()
     // Generate random angles for pitch and roll, yaw remains null.
     {
@@ -207,21 +169,6 @@ public class TestScript : MonoBehaviour
         return randomAttitude;
     }
 
-
-    /*public void LoadAndDestroy_AfterQuestions(int trial, int totalTrials)
-    {
-        if (trial <= totalTrials)
-        {
-            QuestionPanelTrial.SetActive(false);
-            StartTrialPanel.SetActive(true);
-        }
-
-        else
-        {
-            QuestionPanelTrial.SetActive(false);
-            QuestionPanelFinal.SetActive(true);
-        }
-    }*/
 
     public void AddPostQuestLastButton()
     {

@@ -7,9 +7,9 @@ using UnityEngine;
 public class Participant
 {
     [SerializeField]
-    public int num, order, indType, age, pitchType, underwater, joystick;
+    public int num, order, indType, age, underwater, joystick;
     [SerializeField]
-    public string gender, indicatorChoice;
+    public string gender, pitchType, indicatorChoice;
     [SerializeField]
     public List<Block> blocks;
 
@@ -21,6 +21,7 @@ public class Participant
         gender = " ";
         underwater = -1;
         joystick = -1;
+        pitchType = "";
         indicatorChoice = " ";
         blocks = new List<Block>();
     }
@@ -35,7 +36,7 @@ public class Participant
     /// <param name="j">Joystick choice</param>
     /// <param name="u">Underwater Proficiency</param>
 
-    public Participant(int n, int o, int a, string g, int u, int j, string i/*, int o, int p ,List<(int,bool)> ans*/)
+    public Participant(int n, int o, int a, string g, int u, int j, string k, string i/*, int o, int p ,List<(int,bool)> ans*/)
     {
         num = n;
         order = o;
@@ -43,6 +44,7 @@ public class Participant
         gender = g;
         underwater = u;
         joystick = j;
+        pitchType = k;
         indicatorChoice = i;
         blocks = new List<Block>();
     }
@@ -50,6 +52,6 @@ public class Participant
     public override string ToString() 
     {
         //return "Participant: " + num + "; " + age + "; " + gender + "; " + indType /*order*/ + "; " + pitchType + "; "; //+ blocks;
-        return "Participant: " + num + "; " + order + "; " + age + "; " + gender + "; " + underwater + "; " + joystick + "; " + indicatorChoice + "; " + blocks;
+        return "Participant: " + num + "; " + order + "; " + age + "; " + gender + "; " + underwater + "; " + joystick + "; " + pitchType + "; " + indicatorChoice + "; " + blocks;
     }
 }
