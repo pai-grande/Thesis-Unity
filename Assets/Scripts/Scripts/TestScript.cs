@@ -4,16 +4,16 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
 
 public class TestScript : MonoBehaviour
 {
 
     // scenes
-    public GameObject QuestionPanelTrial, QuestionPanelTrial2, QuestionPanelFinal, StartTrialPanel, PracticePanel, LastQuestionPanel;
+    public GameObject QuestionPanelTrial, StartTrialPanel, PracticePanel, LastQuestionPanel;
     
     //trials
     public Timer timer;
-    public bool needsPractice;
     public int trial, totalTrials, trialsLeft;
     public PersistentData persData;
     public Vector3 startAtt;
@@ -22,15 +22,15 @@ public class TestScript : MonoBehaviour
     //public Attitude finalAttitude;
     public List<TrialData> expData;
     public GameObject Player;
-    public string choice;
-    //public Quaternion startAttQ;
-    //public Quaternion finalAttQ;
+    public Quaternion startAttQ;
+    public Quaternion finalAttQ;
 
     public TMP_Text counterText;
     
 
     //question feedback
     public int answer1, answer2, answer3, answer4, answer5;
+    public string choice;
 
 
 
@@ -38,16 +38,11 @@ public class TestScript : MonoBehaviour
     void Start()
     {
         // get persistent data, timer, player and trial data
-        needsPractice = true;
         persData = FindObjectOfType<PersistentData>();
         timer = FindObjectOfType<Timer>();
         Player = GameObject.Find("Player_Capsule");
         
         persData.setStudyOrder(Random.Range(0, 2));
-
-        //var btngroupCon = QuestionPanelTrial.transform.GetComponentsInChildren<ButtonsGroupController>();
-        //firstGrp = btngroupCon[0];
-        //secGrp = btngroupCon[1];
        
 
         trial = 1;
@@ -65,25 +60,7 @@ public class TestScript : MonoBehaviour
         {
             timer.StopTimer();
             Debug.Log("Ended the trial run");
-            EndTrial();
-            //Debug.Log(persist)
-
-
-            /*if (trial <  totalTrials)
-            {
-                EndTrial();
-
-                QuestionPanelTrial.SetActive(true);
-
-            }
-
-            else
-            {
-                Debug.Log("Ended test for this attitude indicator");
-                EndTest();
-
-
-            }*/            
+            EndTrial();            
         }
     }
 
@@ -104,11 +81,15 @@ public class TestScript : MonoBehaviour
 
 
 
-            Player.transform.Rotate(0.0f, 90f, 0.0f, Space.Self);
-            
+            Player.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
 
-            
+            startAttQ = Player.transform.rotation;
+            startAtt = startAttQ.eulerAngles;
 
+            Debug.Log(startAtt);
+            
+            
+            
             //float pitch = Random.Range(-180f, 180f);
             //float roll = Random.Range(-180f, 180f);
             //Player.transform.rotation = Quaternion.AngleAxis(roll, Vector3.forward);
@@ -129,6 +110,8 @@ public class TestScript : MonoBehaviour
     // Activated when KEY is pressed by player to finish trial run. 
     {
         //get final rotation
+        finalAttQ = Player.transform.rotation;
+        finalAtt = finalAttQ.eulerAngles;
         finalAtt[0] = Player.transform.eulerAngles.x;
         finalAtt[2] = Player.transform.eulerAngles.z;
 
@@ -141,10 +124,9 @@ public class TestScript : MonoBehaviour
         expData.Add(trialD);
         QuestionPanelTrial.SetActive(true);
 
-        //add trial
-        //trial++;
-
         //reset attitude to normal
+        //Player.transform.Rotate(-startAtt[0], -startAtt[1], -startAtt[2], Space.Self);
+        Player.transform.rotation = Quaternion.Euler(-90, 0, 0);
 
     }
 
@@ -152,41 +134,28 @@ public class TestScript : MonoBehaviour
     public void EndTest()
     // Last trial activates this. Toggle off trial question panel, load last question panel, end experiment and save data.
     {
-        //var trialD = new TrialData(trial, new AttitudeQuat(startAttQ), new AttitudeQuat(finalAttQ), timer.elapTime);
-        //var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), persData.currentCondition, timer.elapTime);
-        //expData.Add(trialD);
-
-        //isto e no prsctice
-        //var block = new Block(persData.currentCondition/*, elapTime*/);
-        //persData.participant.blocks.Add(block);
-
-        //
+        //save choice of indicator
         persData.participant.indicatorChoice = choice;
         //add trial to persistent data
         persData.participant.blocks.LastOrDefault().expData = expData;
         // Append persistent data to json;
         SaveData.AppendToJson<Participant>(persData.filePath, persData.fileName, persData.participant);
 
-        //////
-        //QuestionPanelTrial.SetActive(true);
-
         if (persData.isFirstBlock)
         {
             persData.changeCondition();
+
             /////////////////////////////
             // change attitude indicators
             /////////////////////////////
             trial = 1;
             expData = new List<TrialData>();
             PracticePanel.SetActive(true);
-            //QuestionPanelTrial.SetActive(true); 
-
         }
 
         else 
         {
             // Panels
-            //QuestionPanelFinal.SetActive(true);
             LastQuestionPanel.SetActive(true);
         }
 
@@ -194,7 +163,7 @@ public class TestScript : MonoBehaviour
     }
 
 
-    public void LastTrialPanelManager()
+    /*public void LastTrialPanelManager()
     {
         QuestionPanelTrial2.SetActive(false);
 
@@ -217,7 +186,9 @@ public class TestScript : MonoBehaviour
                 LastQuestionPanel.SetActive(true);
             }
         }
-    }
+    }*/
+
+ 
 
     public string GenerateRandomAttitudeIndicator()
     // Generate random attitude indicator, return C or PH.
@@ -237,7 +208,7 @@ public class TestScript : MonoBehaviour
     }
 
 
-    public void LoadAndDestroy_AfterQuestions(int trial, int totalTrials)
+    /*public void LoadAndDestroy_AfterQuestions(int trial, int totalTrials)
     {
         if (trial <= totalTrials)
         {
@@ -250,7 +221,7 @@ public class TestScript : MonoBehaviour
             QuestionPanelTrial.SetActive(false);
             QuestionPanelFinal.SetActive(true);
         }
-    }
+    }*/
 
     public void AddPostQuestLastButton()
     {
@@ -260,15 +231,12 @@ public class TestScript : MonoBehaviour
         {
             trial++;
             StartTrialPanel.SetActive(true);
-            //QuestionPanelTrial.SetActive(true);
-
         }
 
         else
         {
             Debug.Log("Ended test for this attitude indicator");
             EndTest();
-
         }
 
     }

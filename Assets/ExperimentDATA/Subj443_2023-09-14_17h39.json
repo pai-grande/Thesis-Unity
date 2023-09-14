@@ -1,0 +1,95 @@
+{
+  "num": 443,
+  "order": 1,
+  "indType": 0,
+  "age": 0,
+  "pitchType": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "indicatorChoice": "Normal",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 1.03028584,
+          "startAttitude": {
+            "pitch": 270.3026,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.3026,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 3.01428986,
+          "startAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 1.26470184,
+          "startAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 1.46767044,
+          "startAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 270.0,
+            "roll": 0.0
+          },
+          "indicator": "Normal"
+        }
+      ]
+    }
+  ]
+}

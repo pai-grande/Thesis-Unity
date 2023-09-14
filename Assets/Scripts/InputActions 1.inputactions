@@ -16,12 +16,21 @@
                 },
                 {
                     "name": "Look",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "5abc629c-f2cf-4f14-9209-ba0b8fe37d7f",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Enter",
+                    "type": "Button",
+                    "id": "1ee62b93-6aa2-4749-975b-7b78284ce3a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -134,6 +143,17 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "87561018-a852-43b4-92e6-d068b2c9626c",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -158,6 +178,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Enter",
+                    "type": "Button",
+                    "id": "f75e557f-d913-4c24-a17e-11d7a3498563",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "82df97af-4ad3-426d-b252-fa8185ff72dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -270,118 +308,28 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Keyboard",
-            "id": "28d0a759-f120-4b5f-8b4c-fd906cfccd13",
-            "actions": [
-                {
-                    "name": "Movement",
-                    "type": "Value",
-                    "id": "f7facdb7-85ba-4d24-962b-36ac68b62a40",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 },
-                {
-                    "name": "Pointer Position1",
-                    "type": "Value",
-                    "id": "cac2b503-7461-4235-92da-97cb7ba36edd",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "71457fbe-adba-4fde-b4b5-baa21fe4ff8c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
                 {
                     "name": "",
-                    "id": "4356f27e-e07b-49e5-8555-192b0f3ee4b9",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
+                    "id": "3d54a78c-b551-41b5-b85b-ff0a38dd9d02",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
-                    "action": "Pointer Position1",
+                    "action": "Enter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "7261f3a7-9247-417b-ade1-6ebc7c197c78",
-                    "path": "<Mouse>/leftButton",
+                    "id": "0fcc560b-9536-4921-8ac4-8ccc164e8407",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Xbox One Gamepad",
-                    "action": "Attack",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Moving w/ Arrows",
-                    "id": "7b2ec543-0eb0-498a-b49f-3b6cdd0fb93c",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "d1949139-e6bb-4b3b-900e-f5aa1531cb81",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "0f09d287-e154-47ec-9e07-c1dbcada7e57",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "c2892974-4dde-4395-8d91-941666946fda",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "71e06d95-ca29-46a7-9f77-25d7cc399b0d",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }

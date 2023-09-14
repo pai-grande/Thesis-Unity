@@ -30,6 +30,7 @@ public class PracticeScript : MonoBehaviour
         var block = new Block(persData.currentCondition/*, elapTime*/);
         persData.participant.blocks.Add(block);
 
+        Player.transform.rotation = Quaternion.Euler(-90, 0, 0);
         timerIsRunning = true;
 
         //var practiceAhead = transform.eulerAngles;//////////////////////

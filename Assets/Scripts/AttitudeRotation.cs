@@ -16,19 +16,20 @@ public class AttitudeRotation : MonoBehaviour
     {
         roll = GameObject.Find("Roll_AttInd");
         pitch = GameObject.Find("Pitch_AttInd");
+        
 
         //GameObject obj = GameObject.Find(TagName);
         //attitudeSub = obj.GetComponent<Vector3Subscriber>();
 
-        lastPitch = 0.0f;
+        lastPitch = -90.0f;
     }
 
     // Update
     void Update()
     {
 
-        
     }
+
 
     public void GetAttitude(Vector3 attitude)
     {

@@ -614,7 +614,6 @@ Transform:
   - {fileID: 1388929453}
   - {fileID: 1763298595}
   - {fileID: 1745226729}
-  - {fileID: 338257890}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9502,13 +9501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestionPanelTrial: {fileID: 1561452845}
-  QuestionPanelTrial2: {fileID: 62668974}
-  QuestionPanelFinal: {fileID: 1825761402}
   StartTrialPanel: {fileID: 1453996507}
   PracticePanel: {fileID: 1913782153}
   LastQuestionPanel: {fileID: 1108349318}
   timer: {fileID: 1533734096}
-  needsPractice: 1
   trial: 0
   totalTrials: 2
   trialsLeft: 0
@@ -9533,13 +9529,15 @@ MonoBehaviour:
     trialTime: 0
     indicator: 
   Player: {fileID: 0}
-  choice: 
+  startAttQ: {x: 0, y: 0, z: 0, w: 0}
+  finalAttQ: {x: 0, y: 0, z: 0, w: 0}
   counterText: {fileID: 744473985}
   answer1: 0
   answer2: 0
   answer3: 0
   answer4: 0
   answer5: 0
+  choice: 
 --- !u!4 &288471439
 Transform:
   m_ObjectHideFlags: 0
@@ -10722,104 +10720,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335138902}
   m_CullTransparentMesh: 1
---- !u!1 &338257886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 338257890}
-  - component: {fileID: 338257889}
-  - component: {fileID: 338257888}
-  - component: {fileID: 338257887}
-  m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &338257887
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338257886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &338257888
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338257886}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f01c415c7ad20411bbb093cb1d631f6a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &338257889
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338257886}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &338257890
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338257886}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.85077006, y: -2.6371403, z: 0.89030683}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 22585635}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &352199257
 GameObject:
   m_ObjectHideFlags: 0
@@ -15478,7 +15378,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484182635}
-  - component: {fileID: 484182636}
   m_Layer: 5
   m_Name: Attitude Indicator
   m_TagString: Untagged
@@ -15503,18 +15402,6 @@ Transform:
   m_Father: {fileID: 1478482374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &484182636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484182634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8cb836ae042ff41966a9879ba960d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &486206434
 GameObject:
   m_ObjectHideFlags: 0
@@ -18678,7 +18565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601162574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1092299, y: -0.47714043, z: -4.5666933}
+  m_LocalPosition: {x: -1.045, y: -0.47714043, z: -4.5666933}
   m_LocalScale: {x: 0.63102585, y: 3.27032, z: 1.2280228}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20817,9 +20704,9 @@ MonoBehaviour:
   Player: {fileID: 2080202631}
   Objects: {fileID: 22585634}
   persData: {fileID: 0}
-  TestSessionPanel: {fileID: 970673291}
+  TestSessionPanel: {fileID: 1453996507}
   practiceScript: {fileID: 679096970}
-  timeRemaining: 10000
+  timeRemaining: 2
   timerFirst: 1
 --- !u!4 &679096971
 Transform:
@@ -26852,7 +26739,7 @@ MonoBehaviour:
         m_MethodName: LoadPanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1453996507}
+          m_ObjectArgument: {fileID: 1913782153}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -28122,7 +28009,7 @@ RectTransform:
   - {fileID: 2026704667}
   - {fileID: 926401655}
   m_Father: {fileID: 1415873187}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29161,7 +29048,7 @@ MonoBehaviour:
         m_MethodName: LoadPanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1913782153}
+          m_ObjectArgument: {fileID: 970673291}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -32119,6 +32006,8 @@ MonoBehaviour:
     blocks: []
   isFirstBlock: 0
   currentCondition: 0
+  PHind: {fileID: 239870544}
+  Nind: {fileID: 484182634}
 --- !u!4 &1098409296
 Transform:
   m_ObjectHideFlags: 0
@@ -39656,7 +39545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187551479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1092299, y: -0.47714043, z: 5.3933067}
+  m_LocalPosition: {x: -1.009, y: -0.47714043, z: 5.3933067}
   m_LocalScale: {x: 0.63102585, y: 3.27032, z: 1.2280228}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46283,8 +46172,8 @@ RectTransform:
   - {fileID: 1725336107}
   - {fileID: 1309605961}
   - {fileID: 295505831}
-  - {fileID: 1913782154}
   - {fileID: 970673292}
+  - {fileID: 1913782154}
   - {fileID: 1453996508}
   - {fileID: 1561452846}
   - {fileID: 610381338}
@@ -48245,7 +48134,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478482370}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1478482373
 Camera:
   m_ObjectHideFlags: 0
@@ -59640,7 +59529,7 @@ RectTransform:
   - {fileID: 1843317345}
   - {fileID: 155821389}
   m_Father: {fileID: 1415873187}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -64369,6 +64258,8 @@ MonoBehaviour:
   m_velocity: 2
   Rotation: {x: 0, y: 0, z: 0}
   attRot: {fileID: 288471440}
+  movement: {x: 0, y: 0, z: 0}
+  look3: {x: 0, y: 0, z: 0}
 --- !u!114 &2080202637
 MonoBehaviour:
   m_ObjectHideFlags: 0

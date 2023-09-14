@@ -8,6 +8,7 @@ public class PersistentData : MonoBehaviour
     public Participant participant;
     public bool isFirstBlock;
     public Condition currentCondition;
+    public GameObject PHind, Nind;
 
     public void setStudyOrder(int ord)
     {
@@ -15,9 +16,11 @@ public class PersistentData : MonoBehaviour
         {
             case 0:
                 currentCondition = Condition.Control;
+                PHind.SetActive(false);
                 break;
             case 1:
                 currentCondition = Condition.PseudoHaptic;
+                Nind.SetActive(false);
                 break;
             default:
                 Debug.LogError("Wrong Order number!");
@@ -34,9 +37,13 @@ public class PersistentData : MonoBehaviour
             {
                 case Condition.Control:
                     currentCondition = Condition.PseudoHaptic;
+                    Nind.SetActive(false);
+                    PHind.SetActive(true);
                     break;
                 case Condition.PseudoHaptic:
                     currentCondition = Condition.Control;
+                    Nind.SetActive(true);
+                    PHind.SetActive(false);
                     break;
                 default:
                     Debug.LogError("Wrong condition, condition not found.");

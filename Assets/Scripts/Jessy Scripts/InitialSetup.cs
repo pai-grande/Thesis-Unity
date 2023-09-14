@@ -23,7 +23,7 @@ public class InitialSetup : MonoBehaviour
     {
         //pNum = int.Parse(num);
         // generate random number to be participant number
-        pNum = UnityEngine.Random.Range(1, 100);  // not to confuse with system.random
+        pNum = UnityEngine.Random.Range(1, 1000);  // not to confuse with system.random
     }
 
     public void SetStudyOrder()
