@@ -6,12 +6,9 @@ public class PracticeScript : MonoBehaviour
 {
     
     public bool timerIsRunning = false;
-    //public GameObject AttIndicatorPH;
-    //public GameObject AttIndicatorN;
     public GameObject Player;
     public GameObject Objects;
     public PersistentData persData;
-    //public ChangeScene sceneLoad;
     public GameObject TestSessionPanel;
     public PracticeScript practiceScript;
     public float timeRemaining = 5;
@@ -30,27 +27,11 @@ public class PracticeScript : MonoBehaviour
         var block = new Block(persData.currentCondition/*, elapTime*/);
         persData.participant.blocks.Add(block);
 
-        Player.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        Player.transform.rotation = Quaternion.Euler(0, 0, 0);
         timerIsRunning = true;
-
-        //var practiceAhead = transform.eulerAngles;//////////////////////
-        //practiceAhead.x = -90;
-        //Player.transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-
-
-        //Player.transform.eulerAngles = practiceAhead;////////////////////////// estava isto
-        //Player.transform.Rotate(startAtt/*, Space.World*/);
-        //Player.transform.Rotate(45f, 45f, 0f, Space.Self);
-        //Player.transform.rotation = Quaternion.identity;
     }
 
-    /*void Start()
-    {
-        // Starts the timer when scene is loaded
-        
-        practiceScript = GetComponent<PracticeScript>();
-        //sceneLoad = GetComponent<ChangeScene>();
-    }*/
+
     void Update()
     {
         if (timerIsRunning)
@@ -69,6 +50,7 @@ public class PracticeScript : MonoBehaviour
                 Objects.SetActive(false);
 
                 TestSessionPanel.SetActive(true);
+                Player.transform.rotation = Quaternion.Euler(0, 0, 0);
 
             }
          }

@@ -8079,8 +8079,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239870544}
-  m_LocalRotation: {x: 0.703252, y: 0, z: 0, w: 0.71094066}
-  m_LocalPosition: {x: -0.031505983, y: -3.82, z: 0.99}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.031505, z: 3.82}
   m_LocalScale: {x: 2.211765, y: 1.4830171, z: 0.59820557}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8088,7 +8088,7 @@ Transform:
   - {fileID: 1034446334}
   m_Father: {fileID: 2080202635}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 89.377, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &239870549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9565,6 +9565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8cb836ae042ff41966a9879ba960d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roll: {fileID: 0}
+  pitch: {fileID: 0}
 --- !u!1 &292417953
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,7 +10496,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.7032447, y: -0, z: -0, w: 0.710948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: 0.12, z: 0.94}
   m_LocalScale: {x: 4.500855, y: 4.500854, z: 4.500854}
   m_ConstrainProportionsScale: 0
@@ -20706,7 +20708,7 @@ MonoBehaviour:
   persData: {fileID: 0}
   TestSessionPanel: {fileID: 1453996507}
   practiceScript: {fileID: 679096970}
-  timeRemaining: 2
+  timeRemaining: 2000
   timerFirst: 1
 --- !u!4 &679096971
 Transform:
@@ -21432,7 +21434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 74}
+  m_AnchoredPosition: {x: 0, y: 23}
   m_SizeDelta: {x: 1298.4, y: 536.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696136547
@@ -21455,9 +21457,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "On your joystick controller, do you prefer to use inverted pitch or non-inverted
-    pitch? \n\n- Inverted pitch: \"handle behind head\"\n- Non-inverted pitch: \"inside
-    head control\""
+  m_text: 'Choose one:
+
+
+    - Do you prefer to look up by moving the joystick upwards?
+
+
+
+
+    Or
+
+
+
+
+    -
+    Do you prefer to look up by moving the joystick downwards?
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21727,7 +21745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Non-Inverted
+  m_text: Move joystick upwards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23308,7 +23326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &809225021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26559,9 +26577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Inverted
-
-'
+  m_text: Move joystick downwards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28016,8 +28032,8 @@ RectTransform:
   m_Children:
   - {fileID: 101753912}
   - {fileID: 696136546}
-  - {fileID: 1068504851}
   - {fileID: 2026704667}
+  - {fileID: 1068504851}
   - {fileID: 926401655}
   m_Father: {fileID: 1415873187}
   m_RootOrder: 4
@@ -30990,12 +31006,12 @@ RectTransform:
   m_Children:
   - {fileID: 917336518}
   m_Father: {fileID: 970673292}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -341, y: -231.99997}
-  m_SizeDelta: {x: 357.3, y: 79.8}
+  m_AnchoredPosition: {x: -341, y: -281}
+  m_SizeDelta: {x: 347.19, y: 116.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068504852
 MonoBehaviour:
@@ -34032,7 +34048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143323050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.49999714}
+  m_LocalPosition: {x: 0, y: 0, z: 0.49999762}
   m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62867,12 +62883,12 @@ RectTransform:
   m_Children:
   - {fileID: 705137663}
   m_Father: {fileID: 970673292}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357, y: -231.99997}
-  m_SizeDelta: {x: 357.3, y: 79.8}
+  m_AnchoredPosition: {x: -341, y: 117}
+  m_SizeDelta: {x: 347.19, y: 116.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026704668
 MonoBehaviour:
@@ -64242,7 +64258,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080202631}
-  m_LocalRotation: {x: -0.7032447, y: -0, z: -0, w: 0.710948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -15, z: -2}
   m_LocalScale: {x: 0.22218, y: 0.22218, z: 0.22218}
   m_ConstrainProportionsScale: 0
@@ -64252,7 +64268,7 @@ Transform:
   - {fileID: 2036452850}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -89.377, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2080202636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64322,12 +64338,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080202631}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: d8e1a486e1f0b834b894447862084470,
+    type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -64342,7 +64359,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &2083391378

@@ -18,8 +18,6 @@ public class TestScript : MonoBehaviour
     public PersistentData persData;
     public Vector3 startAtt;
     public Vector3 finalAtt;
-    //public Attitude startAttitude;
-    //public Attitude finalAttitude;
     public List<TrialData> expData;
     public GameObject Player;
     public Quaternion startAttQ;
@@ -72,16 +70,13 @@ public class TestScript : MonoBehaviour
             //PANEL ---- change panel from EndTrial to Experiment ----
             StartTrialPanel.SetActive(false);
 
-
-            //ATTITUDE ---- set up random attittude - apply random rotation on pitch and roll ---- //Player.transform.rotation = Quaternion.Euler(startAtt); 
-            //startAtt = GenerateRandomAttitude();
-            //Player.transform.Rotate(startAtt/*, Space.World*/);
-            //Player.transform.eulerAngles = startAtt;
-            //Debug.Log(startAtt);
-
-
-
-            Player.transform.Rotate(Random.Range(0,181), 0.0f, Random.Range(0,181), Space.Self);
+            int Random1 = GetRandomNumber();
+            int Random2 = GetRandomNumber();
+            Player.transform.Rotate(5*Random1+1, 0.0f, 5*Random2+1, Space.Self);
+            Debug.Log(Random1);
+            Debug.Log(Random2);
+            
+            
 
             startAttQ = Player.transform.rotation;
             startAtt = startAttQ.eulerAngles;
@@ -89,14 +84,6 @@ public class TestScript : MonoBehaviour
             Debug.Log(startAtt);
             
             
-            
-            //float pitch = Random.Range(-180f, 180f);
-            //float roll = Random.Range(-180f, 180f);
-            //Player.transform.rotation = Quaternion.AngleAxis(roll, Vector3.forward);
-            //Player.transform.rotation = Quaternion.AngleAxis(pitch, Vector3.right);
-            //startAttQ = Player.transform.rotation;
-            //Player.transform.eulerAngles = startAtt;
-            //Debug.Log(startAttQ);
 
             //TIMER ---- start timer
             timer.BeginTimer();
@@ -112,6 +99,7 @@ public class TestScript : MonoBehaviour
         //get final rotation
         finalAttQ = Player.transform.rotation;
         finalAtt = finalAttQ.eulerAngles;
+        Debug.Log(Player.transform.eulerAngles.y);
         finalAtt[0] = Player.transform.eulerAngles.x;
         finalAtt[2] = Player.transform.eulerAngles.z;
 
@@ -125,8 +113,11 @@ public class TestScript : MonoBehaviour
         QuestionPanelTrial.SetActive(true);
 
         //reset attitude to normal
-        //Player.transform.Rotate(-startAtt[0], -startAtt[1], -startAtt[2], Space.Self);
-        Player.transform.rotation = Quaternion.Euler(-90, 0, 0);
+
+
+        //
+        Player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Player.transform.rotation = Quaternion.Euler(Vector3.zero);
 
     }
 
@@ -169,6 +160,23 @@ public class TestScript : MonoBehaviour
         return randomAttitude;
     }
 
+
+    int GetRandomNumber()
+    {
+        int randomNumber = Random.Range(-36, 37);
+        if (Mathf.Abs(randomNumber) <= 2)
+        {
+            if (randomNumber >= 0f)
+            {
+                randomNumber = Random.Range(2, 37);
+            }
+            else
+            {
+                randomNumber = Random.Range(-36, -3);
+            }
+        }
+        return randomNumber;
+    }
 
     public void AddPostQuestLastButton()
     {

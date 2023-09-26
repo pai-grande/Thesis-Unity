@@ -7,7 +7,7 @@ using UnityEngine;
 public class AttitudeRotation : MonoBehaviour
 {
     //public string TagName;
-    private GameObject roll, pitch;
+    public GameObject roll, pitch;
     //private Vector3Subscriber attitudeSub;
     private float lastPitch;
 
@@ -21,7 +21,7 @@ public class AttitudeRotation : MonoBehaviour
         //GameObject obj = GameObject.Find(TagName);
         //attitudeSub = obj.GetComponent<Vector3Subscriber>();
 
-        lastPitch = -90.0f;
+        lastPitch = 0.0f;
     }
 
     // Update
@@ -34,8 +34,10 @@ public class AttitudeRotation : MonoBehaviour
     public void GetAttitude(Vector3 attitude)
     {
         roll.transform.localEulerAngles = new Vector3(0.0f, 0.0f, -attitude.z); //have to negate the roll, of how the indicator shows banked
+        //transform.RotateAround(roll.transform.position, Vector3.forward, -attitude.z);
 
-        pitch.transform.Rotate(new Vector3((lastPitch - attitude.x)/*-90*/, 0.0f, 0.0f), Space.Self);
+        pitch.transform.Rotate(new Vector3((lastPitch - attitude.x), 0.0f, 0.0f), Space.Self);
+        //transform.RotateAround(pitch.transform.position, Vector3.right, (lastPitch - attitude.x));
 
         lastPitch = attitude.x;
     }

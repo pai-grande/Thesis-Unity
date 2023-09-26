@@ -23,8 +23,9 @@ public class InitialSetup : MonoBehaviour
     }
 
     public void SetStudyOrder()
-    {        
-        studyOrd = UnityEngine.Random.Range(0, 2);
+    {
+        //studyOrd = UnityEngine.Random.Range(0, 2);
+        studyOrd = 0;
     }
 
     public void SetParticipantAge(string age)
