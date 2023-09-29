@@ -7,6 +7,7 @@ public class PracticeScript : MonoBehaviour
     
     public bool timerIsRunning = false;
     public GameObject Player;
+    public Rigidbody PlayerRB;
     public GameObject Objects;
     public PersistentData persData;
     public GameObject TestSessionPanel;
@@ -19,12 +20,13 @@ public class PracticeScript : MonoBehaviour
     public void StartTimer()
     {
         Player = GameObject.Find("Player_Capsule");
+        PlayerRB = Player.GetComponent<Rigidbody>();
         //Objects = GameObject.Find("Objects");
         Objects.SetActive(true);
 
 
         persData = FindObjectOfType<PersistentData>();
-        var block = new Block(persData.currentCondition/*, elapTime*/);
+        var block = new Block(persData.currentCondition);
         persData.participant.blocks.Add(block);
 
         Player.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -50,7 +52,9 @@ public class PracticeScript : MonoBehaviour
                 Objects.SetActive(false);
 
                 TestSessionPanel.SetActive(true);
+                PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
                 Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                PlayerRB.constraints = RigidbodyConstraints.None;
 
             }
          }

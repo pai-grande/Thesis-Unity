@@ -24,8 +24,7 @@ public class InitialSetup : MonoBehaviour
 
     public void SetStudyOrder()
     {
-        //studyOrd = UnityEngine.Random.Range(0, 2);
-        studyOrd = 0;
+        studyOrd = UnityEngine.Random.Range(0, 2);
     }
 
     public void SetParticipantAge(string age)
@@ -54,7 +53,7 @@ public class InitialSetup : MonoBehaviour
 
     public void CreateParticipant()
     {
-        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick, pPitchType, ""/*, pIndType, pPitchType*/);
+        part = new Participant(pNum, studyOrd, pAge, pGender, pUnderwater, pJoystick, pPitchType, "");
         Debug.Log(part.ToString());
         var file = SaveData.InitialSaveIntoJson(part);
 

@@ -7368,7 +7368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1862aa91e44ef55478b87c4c78adbf3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 2080202640}
 --- !u!1 &232682213
 GameObject:
   m_ObjectHideFlags: 0
@@ -9508,6 +9508,7 @@ MonoBehaviour:
   trial: 0
   totalTrials: 2
   trialsLeft: 0
+  firstInputTime: 0
   persData: {fileID: 1098409295}
   startAtt: {x: 0, y: 0, z: 0}
   finalAtt: {x: 0, y: 0, z: 0}
@@ -9519,6 +9520,7 @@ MonoBehaviour:
     workload: 0
     trialCondition: 0
     trialTime: 0
+    inputTime: 0
     indicator: 
   - trial: 0
     confidence: 0
@@ -9527,8 +9529,10 @@ MonoBehaviour:
     workload: 0
     trialCondition: 0
     trialTime: 0
+    inputTime: 0
     indicator: 
   Player: {fileID: 0}
+  PlayerRB: {fileID: 0}
   startAttQ: {x: 0, y: 0, z: 0, w: 0}
   finalAttQ: {x: 0, y: 0, z: 0, w: 0}
   counterText: {fileID: 744473985}
@@ -9565,8 +9569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8cb836ae042ff41966a9879ba960d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roll: {fileID: 0}
-  pitch: {fileID: 0}
+  roll: {fileID: 1143323050}
+  pitch: {fileID: 895830304}
 --- !u!1 &292417953
 GameObject:
   m_ObjectHideFlags: 0
@@ -20704,6 +20708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerIsRunning: 0
   Player: {fileID: 2080202631}
+  PlayerRB: {fileID: 0}
   Objects: {fileID: 22585634}
   persData: {fileID: 0}
   TestSessionPanel: {fileID: 1453996507}
@@ -23326,7 +23331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &809225021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25822,6 +25827,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -101}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &895830304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d67fbaf835e24a34185a5ba0a7683fb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1919021150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897273720
 GameObject:
   m_ObjectHideFlags: 0
@@ -27144,6 +27155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicatorPH: {fileID: 2127587968}
   indicatorN: {fileID: 0}
+  cameraNormal: {fileID: 0}
 --- !u!1 &943723102
 GameObject:
   m_ObjectHideFlags: 0
@@ -31057,9 +31069,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 231229980}
-        m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 231229982}
+        m_TargetAssemblyTypeName: SwitchActionMap, Assembly-CSharp
+        m_MethodName: ActivateInvertedPitchMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50108,6 +50120,7 @@ MonoBehaviour:
   timeRemaining: 500
   timerIsRunning: 0
   elapTime: 0
+  elapTimeInput: 0
   gameObj: {fileID: 0}
 --- !u!1 &1535869937
 GameObject:
@@ -62937,6 +62950,18 @@ MonoBehaviour:
       - m_Target: {fileID: 942307913}
         m_TargetAssemblyTypeName: InitialSetup, Assembly-CSharp
         m_MethodName: pitchNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 231229982}
+        m_TargetAssemblyTypeName: SwitchActionMap, Assembly-CSharp
+        m_MethodName: ActivateNormalPitchMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

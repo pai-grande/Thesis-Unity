@@ -10,14 +10,10 @@ public class TrialData
 {
     [SerializeField]
     public int trial, confidence, certainty, frustration, workload;
-    /*[SerializeField]
-    public AttitudeQuat startAttitudeQuat; //attitude (pitch, roll)
-    [SerializeField]
-    public AttitudeQuat finalAttitudeQuat; //attitude (pitch, roll)*/
     [SerializeField]
     public Condition trialCondition; //control/PH attitude indicator
     [SerializeField]
-    public float trialTime; //control/PH attitude indicator
+    public float trialTime, inputTime; 
     [SerializeField]
     public Attitude startAttitude; //attitude (pitch, roll)
     [SerializeField]
@@ -25,10 +21,7 @@ public class TrialData
     [SerializeField]
     public string indicator; 
 
-    //[SerializeField]
-    //public Quaternion startAttitudeQuat;
-    //[SerializeField]
-    //public Quaternion finalAttitudeQuat;
+
 
 
 
@@ -40,7 +33,7 @@ public class TrialData
     /// <param name="fAQ">Final trial attitude in Quaternion</param>
     /// <param name="elapTime">Time taken to orientate the robot</param>
 
-    public TrialData(int t, /*AttitudeQuat sAQ, AttitudeQuat fAQ*/ Attitude sA, Attitude fA, Condition tC, float elapTime)
+    public TrialData(int t, /*AttitudeQuat sAQ, AttitudeQuat fAQ*/ Attitude sA, Attitude fA, Condition tC, float inTime, float elapTime)
     {
         trial = t;
         startAttitude = sA;
@@ -48,6 +41,7 @@ public class TrialData
         //startAttitudeQuat = sAQ;
         //finalAttitudeQuat = fAQ;
         trialTime = elapTime;
+        inputTime = inTime;
         trialCondition = tC;
     }
 

@@ -16,12 +16,18 @@ public struct Attitude
 {
     [SerializeField]
     public float pitch { get; }
+
+    [SerializeField]
+    public float yaw { get; }
+
+
     [SerializeField]
     public float roll { get; }
 
-    public Attitude(float p, float r)
+    public Attitude(float p, float y, float r)
     {
         pitch = p;
+        yaw = y;
         roll = r;
     }
 }
@@ -40,14 +46,3 @@ public struct DecisionTime
     }
 }
 
-/*[Serializable]
-public struct AttitudeQuat
-{
-    [SerializeField]
-    public Quaternion AttitudeQ { get; }
-
-    public AttitudeQuat(Quaternion q)
-    {
-        AttitudeQ = q;
-    }
-}*/

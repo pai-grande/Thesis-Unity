@@ -6,6 +6,7 @@ public class Functions : MonoBehaviour
 {
     public GameObject indicatorPH;
     public GameObject indicatorN;
+    public Camera cameraNormal;
 
     public void SetAttIndicator(string indicator)
     {

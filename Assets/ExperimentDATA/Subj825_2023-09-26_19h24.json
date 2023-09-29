@@ -1,0 +1,60 @@
+{
+  "num": 825,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "pitchType": "InvertedPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 1.374506,
+          "inputTime": 0.0,
+          "startAttitude": {
+            "pitch": 334.0,
+            "yaw": 180.0,
+            "roll": 230.999985
+          },
+          "finalAttitude": {
+            "pitch": 334.0,
+            "yaw": 180.0,
+            "roll": 230.999985
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.2433033,
+          "inputTime": 0.0,
+          "startAttitude": {
+            "pitch": 65.99999,
+            "yaw": 0.0,
+            "roll": 181.0
+          },
+          "finalAttitude": {
+            "pitch": 65.99999,
+            "yaw": 0.0,
+            "roll": 181.0
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

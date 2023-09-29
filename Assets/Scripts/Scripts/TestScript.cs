@@ -15,13 +15,16 @@ public class TestScript : MonoBehaviour
     //trials
     public Timer timer;
     public int trial, totalTrials, trialsLeft;
+    public float firstInputTime;
     public PersistentData persData;
     public Vector3 startAtt;
     public Vector3 finalAtt;
     public List<TrialData> expData;
     public GameObject Player;
+    public Rigidbody PlayerRB;
     public Quaternion startAttQ;
     public Quaternion finalAttQ;
+    public Movement movement;
 
     public TMP_Text counterText;
     
@@ -36,11 +39,15 @@ public class TestScript : MonoBehaviour
     void Start()
     {
         // get persistent data, timer, player and trial data
+
         persData = FindObjectOfType<PersistentData>();
+        movement = FindObjectOfType<Movement>();
         timer = FindObjectOfType<Timer>();
         Player = GameObject.Find("Player_Capsule");
+        PlayerRB = Player.GetComponent<Rigidbody>();
         
         persData.setStudyOrder(Random.Range(0, 2));
+        movement.InputTimer = false;
        
 
         trial = 1;
@@ -53,6 +60,11 @@ public class TestScript : MonoBehaviour
     {
         trialsLeft = (totalTrials - trial + 1);
         counterText.SetText("Trials left:     " + trialsLeft);
+
+        
+        if(movement.InputTimer)
+            firstInputTime = timer.GetElapsedTime_Input();
+            movement.InputTimer = false;
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -101,14 +113,12 @@ public class TestScript : MonoBehaviour
         finalAtt = finalAttQ.eulerAngles;
         Debug.Log(Player.transform.eulerAngles.y);
         finalAtt[0] = Player.transform.eulerAngles.x;
+        finalAtt[1] = Player.transform.eulerAngles.y;
         finalAtt[2] = Player.transform.eulerAngles.z;
 
-        //finalAttQ = Player.transform.rotation;
-        //Debug.Log(finalAttQ);
 
         //save trial data 
-        //var trialD = new TrialData(trial, new AttitudeQuat(startAttQ), new AttitudeQuat(finalAttQ), timer.elapTime);
-        var trialD = new TrialData(trial, new Attitude(startAtt[0], startAtt[2]), new Attitude(finalAtt[0], finalAtt[2]), persData.currentCondition, timer.elapTime);
+        var trialD = new TrialData(trial, new Attitude(startAtt[0], finalAtt[1], startAtt[2]), new Attitude(finalAtt[0], finalAtt[1], finalAtt[2]), persData.currentCondition, firstInputTime, timer.elapTime);
         expData.Add(trialD);
         QuestionPanelTrial.SetActive(true);
 
@@ -116,8 +126,9 @@ public class TestScript : MonoBehaviour
 
 
         //
-        Player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
         Player.transform.rotation = Quaternion.Euler(Vector3.zero);
+        PlayerRB.constraints = RigidbodyConstraints.None;
 
     }
 

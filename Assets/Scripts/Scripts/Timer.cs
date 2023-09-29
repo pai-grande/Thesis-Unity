@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining; //seconds
     public bool timerIsRunning = false;
-    public float elapTime;
+    public float elapTime, elapTimeInput;
     public GameObject gameObj;
     private float initialTime;
 
@@ -58,9 +58,15 @@ public class Timer : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }*/
-
+    public float GetElapsedTime_Input()
+    {
+        elapTimeInput = Time.realtimeSinceStartup - initialTime;
+        //elapTime = Time.realtimeSinceStartup - initialTime;
+        return elapTimeInput;
+    }
     public float GetElapsedTime()
     {
+        //elapTime = Time.realtimeSinceStartup - initialTime;
         return elapTime;
     }
 
@@ -78,5 +84,6 @@ public class Timer : MonoBehaviour
     {
         timerIsRunning = true;
         initialTime = Time.realtimeSinceStartup;
+        elapTimeInput = 0;
     }
 }

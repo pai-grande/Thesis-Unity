@@ -1,0 +1,60 @@
+{
+  "num": 285,
+  "order": 0,
+  "indType": 0,
+  "age": 2,
+  "underwater": 5,
+  "joystick": 2,
+  "gender": "Male",
+  "pitchType": "NormalPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 14.3932343,
+          "inputTime": 0.0,
+          "startAttitude": {
+            "pitch": 12.3313541,
+            "yaw": 172.7736,
+            "roll": 67.25767
+          },
+          "finalAttitude": {
+            "pitch": 12.02283,
+            "yaw": 172.7736,
+            "roll": 64.67026
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 5.458145,
+          "inputTime": 0.0,
+          "startAttitude": {
+            "pitch": 28.9999924,
+            "yaw": 189.17218,
+            "roll": 70.99999
+          },
+          "finalAttitude": {
+            "pitch": 310.934235,
+            "yaw": 189.17218,
+            "roll": 90.9984
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

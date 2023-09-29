@@ -6,20 +6,22 @@ using UnityEngine.InputSystem;
 public class SwitchActionMap : MonoBehaviour
 {
     public PlayerInput playerInput;
-    public void Awake()
+    public void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
+        //playerInput = GetComponent<PlayerInput>();
     }
 
-    public void ActivateNormalPitchMap(InputAction.CallbackContext context) {
+    public void ActivateNormalPitchMap() {
         playerInput.actions.FindActionMap("Player").Enable();
         playerInput.actions.FindActionMap("Inverted Pitch").Disable();
+        Debug.Log("Player action map enabled");
     }
 
-    public void ActivateInvertedPitchMap(InputAction.CallbackContext context)
+    public void ActivateInvertedPitchMap()
     {
         playerInput.actions.FindActionMap("Player").Disable();
         playerInput.actions.FindActionMap("Inverted Pitch").Enable();
+        Debug.Log("Inverted action map enabled");
     }
 
 }

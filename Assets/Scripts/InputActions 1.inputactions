@@ -171,7 +171,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "LookInv",
                     "type": "PassThrough",
                     "id": "049df6c2-9281-41a3-9a38-ffc1b98d7ff4",
                     "expectedControlType": "Vector2",
@@ -183,15 +183,6 @@
                     "name": "Enter",
                     "type": "Button",
                     "id": "f75e557f-d913-4c24-a17e-11d7a3498563",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "82df97af-4ad3-426d-b252-fa8185ff72dd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -261,29 +252,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "LookInv",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
                     "id": "9cb60a3f-51a8-4287-a85a-33f54132c4ff",
-                    "path": "<XInputController>/rightStick/up",
+                    "path": "<Gamepad>/rightStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox One Gamepad",
-                    "action": "Look",
+                    "action": "LookInv",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
                     "id": "b33a6266-92cc-4e3b-96e7-d0f0c870393e",
-                    "path": "<XInputController>/rightStick/down",
+                    "path": "<Gamepad>/rightStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox One Gamepad",
-                    "action": "Look",
+                    "action": "LookInv",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -294,7 +285,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox One Gamepad",
-                    "action": "Look",
+                    "action": "LookInv",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -305,7 +296,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox One Gamepad",
-                    "action": "Look",
+                    "action": "LookInv",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -317,17 +308,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Enter",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0fcc560b-9536-4921-8ac4-8ccc164e8407",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

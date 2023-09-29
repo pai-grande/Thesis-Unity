@@ -14,8 +14,8 @@ public class AttitudeRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roll = GameObject.Find("Roll_AttInd");
-        pitch = GameObject.Find("Pitch_AttInd");
+        //roll = GameObject.Find("Roll_AttInd");
+        //pitch = GameObject.Find("Pitch_AttInd");
         
 
         //GameObject obj = GameObject.Find(TagName);

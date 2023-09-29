@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour {
     public InputActions1 playeractions;
     public Vector3 movement;
     public Vector3 look3;
+    public bool InputTimer;
 
 
 
@@ -40,13 +41,25 @@ public class Movement : MonoBehaviour {
         GetComponent<Rigidbody>().AddForce(movement * 1.0f, ForceMode.VelocityChange);
     }
 
-    void OnLook(InputValue value)
+
+    public void OnLookInv(InputValue value)
+    {
+        Vector2 look = value.Get<Vector2>();
+
+        GetComponent<Rigidbody>().AddTorque(new Vector3(-look.y * 0.001f, 0f, -look.x * 0.001f));
+        InputTimer = true;
+    }
+
+
+    public void OnLook(InputValue value)
     {
         Vector2 look = value.Get<Vector2>();
 
         GetComponent<Rigidbody>().AddTorque(new Vector3(look.y * 0.001f, 0f, -look.x* 0.001f));
+        InputTimer = true;
     }
 
+    
 
     // Update is called once per frame
     void Update () {
