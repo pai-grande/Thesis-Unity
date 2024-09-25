@@ -14,6 +14,7 @@ public class PracticeScript : MonoBehaviour
     public PracticeScript practiceScript;
     public float timeRemaining = 5;
     public bool timerFirst = true;
+    public bool practice = false;
     
 
 
@@ -21,7 +22,6 @@ public class PracticeScript : MonoBehaviour
     {
         Player = GameObject.Find("Player_Capsule");
         PlayerRB = Player.GetComponent<Rigidbody>();
-        //Objects = GameObject.Find("Objects");
         Objects.SetActive(true);
 
 
@@ -31,6 +31,7 @@ public class PracticeScript : MonoBehaviour
 
         Player.transform.rotation = Quaternion.Euler(0, 0, 0);
         timerIsRunning = true;
+        practice = false;
     }
 
 
@@ -46,16 +47,21 @@ public class PracticeScript : MonoBehaviour
             else
             {
                 Debug.Log("Time has run out!");
-                timeRemaining = 5;
-                timerIsRunning = false;
+                if (Input.GetKeyDown("joystick 1 button 5"))
+                    {
+                        practice = true;
+                        Debug.Log("Ended the pratice minimum time");
 
-                Objects.SetActive(false);
+                        timeRemaining = 120;
+                        timerIsRunning = false;
 
-                TestSessionPanel.SetActive(true);
-                PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
-                Player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                PlayerRB.constraints = RigidbodyConstraints.None;
+                        Objects.SetActive(false);
 
+                        TestSessionPanel.SetActive(true);
+                        PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
+                        Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        PlayerRB.constraints = RigidbodyConstraints.None;
+                    }
             }
          }
     }

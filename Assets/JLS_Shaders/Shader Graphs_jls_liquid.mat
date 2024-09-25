@@ -97,7 +97,7 @@ Material:
     - _SPECULAR_ROUGHNESS: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _WobbleX: 0
+    - _WobbleX: -0.02
     - _WobbleZ: 0
     - _ZTest: 4
     - _ZWrite: 0
@@ -106,6 +106,6 @@ Material:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _SPECULAR_COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _SideColor: {r: 0.68235296, g: 0.039215688, b: 0.19215687, a: 0.96862745}
-    - _TopColor: {r: 1, g: 0, b: 0.02745098, a: 0.41960785}
+    - _SideColor: {r: 0.40071517, g: 0.1882353, b: 0.54901963, a: 0.85882354}
+    - _TopColor: {r: 1, g: 0, b: 0.7215686, a: 0.41960785}
   m_BuildTextureStacks: []

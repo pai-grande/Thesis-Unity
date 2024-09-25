@@ -36,7 +36,7 @@ public class AttitudeRotation : MonoBehaviour
         roll.transform.localEulerAngles = new Vector3(0.0f, 0.0f, -attitude.z); //have to negate the roll, of how the indicator shows banked
         //transform.RotateAround(roll.transform.position, Vector3.forward, -attitude.z);
 
-        pitch.transform.Rotate(new Vector3((lastPitch - attitude.x), 0.0f, 0.0f), Space.Self);
+        pitch.transform.Rotate(new Vector3(-(lastPitch - attitude.x), 0.0f, 0.0f), Space.Self);
         //transform.RotateAround(pitch.transform.position, Vector3.right, (lastPitch - attitude.x));
 
         lastPitch = attitude.x;

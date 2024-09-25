@@ -5,18 +5,24 @@ using System.Linq;
 using UnityEngine.UI;
 using TMPro;
 using JetBrains.Annotations;
+using System;
 
 public class TestScript : MonoBehaviour
 {
 
     // scenes
-    public GameObject QuestionPanelTrial, StartTrialPanel, PracticePanel, LastQuestionPanel;
+    public GameObject QuestionPanelTrial, StartTrialPanel, PracticePanel, RestPanel, LastQuestionPanel;
     
     //trials
     public Timer timer;
+    public bool done = true;
     public int trial, totalTrials, trialsLeft;
-    public float firstInputTime;
+    public int genPitch, genRoll;
+    public float firstInputTime, movePitchDiff, moveRollDiff, pitchDiff0, rollDiff0;
     public PersistentData persData;
+    public Movement movement;
+    public PracticeScript practiceScript;
+    public DisplayTimer displayTimer;
     public Vector3 startAtt;
     public Vector3 finalAtt;
     public List<TrialData> expData;
@@ -24,13 +30,13 @@ public class TestScript : MonoBehaviour
     public Rigidbody PlayerRB;
     public Quaternion startAttQ;
     public Quaternion finalAttQ;
-    public Movement movement;
+    public bool firstInputFlag;
 
     public TMP_Text counterText;
     
 
     //question feedback
-    public int answer1, answer2, answer3, answer4, answer5;
+    public int answer1, answer2, answer3, answer4, answer5;  
     public string choice;
 
 
@@ -40,18 +46,22 @@ public class TestScript : MonoBehaviour
     {
         // get persistent data, timer, player and trial data
 
-        persData = FindObjectOfType<PersistentData>();
+        
         movement = FindObjectOfType<Movement>();
+        practiceScript = FindObjectOfType<PracticeScript>();
+        persData = FindObjectOfType<PersistentData>();
         timer = FindObjectOfType<Timer>();
         Player = GameObject.Find("Player_Capsule");
         PlayerRB = Player.GetComponent<Rigidbody>();
         
-        persData.setStudyOrder(Random.Range(0, 2));
-        movement.InputTimer = false;
+        persData.setStudyOrder(UnityEngine.Random.Range(0, 2));
        
 
         trial = 1;
         expData = new List<TrialData>();
+        movement.InputTimer = false;
+        firstInputFlag = true;
+
     } 
 
 
@@ -61,39 +71,59 @@ public class TestScript : MonoBehaviour
         trialsLeft = (totalTrials - trial + 1);
         counterText.SetText("Trials left:     " + trialsLeft);
 
-        
-        if(movement.InputTimer)
-            firstInputTime = timer.GetElapsedTime_Input();
-            movement.InputTimer = false;
+        // euclidean distance between two pos joystick
+        //movement.joystickDistance += Mathf.Sqrt(Mathf.Pow((movement.look.x - movement.prevJoyPos.x), 2) + Mathf.Pow((movement.look.y - movement.prevJoyPos.y), 2));
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        // update movement
+        //movement.prevJoyPos = movement.look;
+
+
+        if (movement.InputTimer && firstInputFlag)
+       {
+            firstInputTime = timer.GetElapsedTime_Input();
+            print(firstInputTime);
+            firstInputFlag = false;
+
+       }
+
+        if (Input.GetKeyDown("joystick 1 button 5") && practiceScript.practice)
         {
             timer.StopTimer();
             Debug.Log("Ended the trial run");
             EndTrial();            
+
         }
     }
 
     public void StartTrial()
     // applied to start button of the test.
-    // will load trial if there are more
-    // will end test if there are no more trials
     {
             //PANEL ---- change panel from EndTrial to Experiment ----
             StartTrialPanel.SetActive(false);
 
-            int Random1 = GetRandomNumber();
-            int Random2 = GetRandomNumber();
-            Player.transform.Rotate(5*Random1+1, 0.0f, 5*Random2+1, Space.Self);
-            Debug.Log(Random1);
-            Debug.Log(Random2);
             
-            
+            firstInputFlag = true;
+            movement.InputTimer = false;
 
-            startAttQ = Player.transform.rotation;
-            startAtt = startAttQ.eulerAngles;
+
+            int Random1 = GetRandomNumber();
+            int Random2 = GetRandomNumber();    
+            genPitch = 5 * Random1 + 1;
+            genRoll = 5 * Random2 + 1;
+       
+            Player.transform.Rotate(genPitch, 0.0f, genRoll, Space.Self);
+
+            
+            Debug.Log("5*randoms");
+            Debug.Log(genPitch);
+            Debug.Log(genRoll);
+
+
+            startAtt = Player.transform.rotation.eulerAngles;
 
             Debug.Log(startAtt);
+
+            movement.joystickDistance = 0;
             
             
 
@@ -108,27 +138,32 @@ public class TestScript : MonoBehaviour
     public void EndTrial()
     // Activated when KEY is pressed by player to finish trial run. 
     {
-        //get final rotation
-        finalAttQ = Player.transform.rotation;
-        finalAtt = finalAttQ.eulerAngles;
-        Debug.Log(Player.transform.eulerAngles.y);
-        finalAtt[0] = Player.transform.eulerAngles.x;
-        finalAtt[1] = Player.transform.eulerAngles.y;
-        finalAtt[2] = Player.transform.eulerAngles.z;
+        // save final orientation
+        finalAtt = Player.transform.rotation.eulerAngles;
+        print("final att" + finalAtt);
 
+
+        movePitchDiff = finalAtt[0] - startAtt[0];
+        moveRollDiff = finalAtt[2] - startAtt[2];
+        pitchDiff0 = Mathf.Min(Mathf.Abs(360 - finalAtt.x), Mathf.Abs(finalAtt.x));
+        rollDiff0 = Mathf.Min(Mathf.Abs(360 - finalAtt.z), Mathf.Abs(finalAtt.z));
 
         //save trial data 
-        var trialD = new TrialData(trial, new Attitude(startAtt[0], finalAtt[1], startAtt[2]), new Attitude(finalAtt[0], finalAtt[1], finalAtt[2]), persData.currentCondition, firstInputTime, timer.elapTime);
+        var trialD = new TrialData(trial, genPitch, genRoll, new Attitude(startAtt[0], finalAtt[1], startAtt[2]), new Attitude(finalAtt[0], finalAtt[1], finalAtt[2]), persData.currentCondition, pitchDiff0, rollDiff0, movePitchDiff, moveRollDiff, movement.joystickDistance, firstInputTime, timer.elapTime);
         expData.Add(trialD);
         QuestionPanelTrial.SetActive(true);
 
-        //reset attitude to normal
 
-
-        //
+        //reset attitude
         PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
         Player.transform.rotation = Quaternion.Euler(Vector3.zero);
         PlayerRB.constraints = RigidbodyConstraints.None;
+
+
+        //reset joystick distance
+        movement.prevJoyPos.x = 0;
+        movement.prevJoyPos.y = 0;
+        movement.joystickDistance = 0;
 
     }
 
@@ -152,38 +187,31 @@ public class TestScript : MonoBehaviour
             /////////////////////////////
             trial = 1;
             expData = new List<TrialData>();
-            PracticePanel.SetActive(true);
+            RestPanel.SetActive(true);
+            displayTimer.BeginTimer();
+
         }
 
         else 
         {
             // Panels
             LastQuestionPanel.SetActive(true);
-        }
-
-        
-    }
-
-    public Vector3 GenerateRandomAttitude()
-    // Generate random angles for pitch and roll, yaw remains null.
-    {
-        Vector3 randomAttitude = new Vector3(Random.Range(0f, 360f), 0f, Random.Range(0f, 360f));
-        return randomAttitude;
+        }   
     }
 
 
     int GetRandomNumber()
     {
-        int randomNumber = Random.Range(-36, 37);
+        int randomNumber = UnityEngine.Random.Range(-36, 37);
         if (Mathf.Abs(randomNumber) <= 2)
         {
             if (randomNumber >= 0f)
             {
-                randomNumber = Random.Range(2, 37);
+                randomNumber = UnityEngine.Random.Range(2, 37);
             }
             else
             {
-                randomNumber = Random.Range(-36, -3);
+                randomNumber = UnityEngine.Random.Range(-36, -3);
             }
         }
         return randomNumber;
@@ -191,7 +219,7 @@ public class TestScript : MonoBehaviour
 
     public void AddPostQuestLastButton()
     {
-        expData.Last().AddPostQuest(answer1, answer2, answer3, answer4, choice);
+        expData.Last().AddPostQuest(answer1, answer2, answer3, answer4, answer5, choice);
 
         if (trial < totalTrials)
         {
@@ -257,52 +285,52 @@ public class TestScript : MonoBehaviour
         answer1 = 10;
     }
 
-    public void Certainty_1()
+    public void Understand_1()
     {
         answer2 = 1;
     }
 
-    public void Certainty_2()
+    public void Understand_2()
     {
         answer2 = 2;
     }
 
-    public void Certainty_3()
+    public void Understand_3()
     {
         answer2 = 3;
     }
 
-    public void Certainty_4()
+    public void Understand_4()
     {
         answer2 = 4;
     }
 
-    public void Certainty_5()
+    public void Understand_5()
     {
         answer2 = 5;
     }
 
-    public void Certainty_6()
+    public void Understand_6()
     {
         answer2 = 6;
     }
 
-    public void Certainty_7()
+    public void Understand_7()
     {
         answer2 = 7;
     }
 
-    public void Certainty_8()
+    public void Understand_8()
     {
         answer2 = 8;
     }
 
-    public void Certainty_9()
+    public void Understand_9()
     {
         answer2 = 9;
     }
 
-    public void Certainty_10()
+    public void Understand_10()
     {
         answer2 = 10;
     }
@@ -357,54 +385,104 @@ public class TestScript : MonoBehaviour
         answer3 = 10;
     }
 
-    public void Work_1()
+    public void mentalWork_1()
     {
         answer4 = 1;
     }
 
-    public void Work_2()
+    public void mentalWork_2()
     {
         answer4 = 2;
     }
 
-    public void Work_3()
+    public void mentalWork_3()
     {
         answer4 = 3;
     }
 
-    public void Work_4()
+    public void mentalWork_4()
     {
         answer4 = 4;
     }
 
-    public void Work_5()
+    public void mentalWork_5()
     {
         answer4 = 5;
     }
 
-    public void Work_6()
+    public void mentalWork_6()
     {
         answer4 = 6;
     }
 
-    public void Work_7()
+    public void mentalWork_7()
     {
         answer4 = 7;
     }
 
-    public void Work_8()
+    public void mentalWork_8()
     {
         answer4 = 8;
     }
 
-    public void Work_9()
+    public void mentalWork_9()
     {
         answer4 = 9;
     }
 
-    public void Work_10()
+    public void mentalWork_10()
     {
         answer4 = 10;
+    }
+
+    public void physWork_1()
+    {
+        answer5 = 1;
+    }
+
+    public void physWork_2()
+    {
+        answer5 = 2;
+    }
+
+    public void physWork_3()
+    {
+        answer5 = 3;
+    }
+
+    public void physWork_4()
+    {
+        answer5 = 4;
+    }
+
+    public void physWork_5()
+    {
+        answer5 = 5;
+    }
+
+    public void physWork_6()
+    {
+        answer5 = 6;
+    }
+
+    public void physWork_7()
+    {
+        answer5 = 7;
+    }
+
+    public void physWork_8()
+    {
+        answer5 = 8;
+    }
+
+    public void physWork_9()
+    {
+        answer5 = 9;
+    }
+
+    public void physWork_10()
+    {
+        answer5 = 10;
     }
 
     public void IndicatorChoiceNormal()
