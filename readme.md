@@ -14,7 +14,7 @@ m_EditorVersionWithRevision: 2021.3.6f1 (7da38d85baf6)
 
 ## Warning
 
-The code in this repository is not the most recent code and might need fixes, though simple. Due to hardware problems on the original computer where it was developed, there may be issues/weird behaviours with the code (i.e. renamed folders or components, missing `.meta` files, settings out of tune or renamed `.cs` scripts). This will be fixed in the future, **as soon as the hard drive of the original computer has been restored.**
+The code in this repository is not the most recent code and might need fixes, though simple. Due to hardware problems on the original computer where it was developed, there may be issues/weird behaviours with the code (i.e. renamed folders or components, missing preloads or `.meta` files, settings out of tune or renamed `.cs` scripts). This will be fixed in the future, **as soon as the hard drive of the original computer has been restored.**
 
 ## Gamepad Controls and Input Actions
 
@@ -26,28 +26,27 @@ The user study was developed in a single Unity3D scene, but the files needed for
 
 ## Introduction
 
-Before starting the test, users read an introduction and filled demographic questions that appeared on slides. The logic for the buttons and scores is present on `/Assets/Scripts/ButtonScripts`
+Before starting the test, users read an introduction and filled demographic questions that appeared on slides. The logic for the buttons and scores is present on `/Assets/Scripts/ButtonScripts`.
 
-## Practice Session
+## Scripts
 
-On the practice session, objects were present all around the user for two minutes. This session was controlled by the `PracticeScript.cs`, which initialized the Test Session after the user pressed the top right bumper.
+1. <ins> Practice Session</ins>: On the practice session, objects were present all around the user for two minutes. This session was controlled by the `PracticeScript.cs`, which initialized the Test Session after the user pressed the top right bumper.
 
-## Test Session
+2. <ins>Test Session</ins>: During the trials, all objects were removed. The most important script of the User Study is the `TestScript.cs`, which controlled the flow of the trials of each AI, switching AI after 10 trials.
 
-During the trials, all objects were removed.
+3. <ins>Attitude Rotation</ins>: Used to control the behaviour of the Control AI (developed by Jéssica Corujeira).
 
-- warning about file weird behaviours done
+4. <ins>Movement, Wobble, Particle Seek</ins>: Responsible for: the forces applied to the body controlling the Users' POV; simulating the wobbling liquid effect on the PH AI; making the particles float towards the target placed on top of the PH AI;
+
+5. <ins>Particle Seek</ins>:
+
+6. <ins>Wobble</ins>:
+
+## EXE File
+
+To compile and make an executable file, navigate to **Build Settings** on Unity3D project editor. To run the program, simply execute the `UserStudy.exe` file.
 
 - experimentData file (saveData script)
 
 - JLS material e shaders
-
-- User Study EXE
-
-- project version: 2021.3.6f1
-
 - buttons scripts, data scripts, jessy scripts, JLS scripts, PH scripts, scripts, particle seek, attitude rotation
-
-- trident IMG
-
-- input system
