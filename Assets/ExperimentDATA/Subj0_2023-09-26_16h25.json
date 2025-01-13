@@ -1,0 +1,95 @@
+{
+  "num": 0,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "pitchType": "",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 61.2047729,
+          "startAttitude": {
+            "pitch": 291.0,
+            "roll": 36.0000076
+          },
+          "finalAttitude": {
+            "pitch": 291.0,
+            "roll": 36.0000076
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 32.61135,
+          "startAttitude": {
+            "pitch": 296.0,
+            "roll": 201.0
+          },
+          "finalAttitude": {
+            "pitch": 296.0,
+            "roll": 201.0
+          },
+          "indicator": ""
+        }
+      ]
+    },
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 34.91539,
+          "startAttitude": {
+            "pitch": 41.0000038,
+            "roll": 181.0
+          },
+          "finalAttitude": {
+            "pitch": 41.0000038,
+            "roll": 181.0
+          },
+          "indicator": ""
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 48.3883972,
+          "startAttitude": {
+            "pitch": 326.0,
+            "roll": 206.0
+          },
+          "finalAttitude": {
+            "pitch": 326.0,
+            "roll": 206.0
+          },
+          "indicator": ""
+        }
+      ]
+    }
+  ]
+}

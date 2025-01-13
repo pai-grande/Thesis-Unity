@@ -1,0 +1,115 @@
+{
+  "num": 0,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "pitchType": "",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 79.51929,
+          "inputTime": 79.51897,
+          "startAttitude": {
+            "pitch": 306.0,
+            "yaw": 14.3232956,
+            "roll": 286.0
+          },
+          "finalAttitude": {
+            "pitch": 19.8135,
+            "yaw": 14.3232956,
+            "roll": 278.70694
+          },
+          "indicator": "",
+          "pitchDifference": -286.1865,
+          "rollDifference": -7.2930603
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 29.4530945,
+          "inputTime": 29.4529877,
+          "startAttitude": {
+            "pitch": -123.999969,
+            "yaw": 180.0,
+            "roll": 111.0
+          },
+          "finalAttitude": {
+            "pitch": -123.999969,
+            "yaw": 180.0,
+            "roll": 111.0
+          },
+          "indicator": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0
+        }
+      ]
+    },
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 26.1769257,
+          "inputTime": 26.1768188,
+          "startAttitude": {
+            "pitch": 336.0,
+            "yaw": -4.672858E-07,
+            "roll": 171.0
+          },
+          "finalAttitude": {
+            "pitch": 336.0,
+            "yaw": -4.672858E-07,
+            "roll": 171.0
+          },
+          "indicator": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 29.0015564,
+          "inputTime": 29.0014343,
+          "startAttitude": {
+            "pitch": -139.0,
+            "yaw": 180.0,
+            "roll": -19.0
+          },
+          "finalAttitude": {
+            "pitch": -139.0,
+            "yaw": 180.0,
+            "roll": -19.0
+          },
+          "indicator": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0
+        }
+      ]
+    }
+  ]
+}

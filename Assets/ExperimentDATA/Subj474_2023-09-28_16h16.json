@@ -1,0 +1,64 @@
+{
+  "num": 474,
+  "order": 0,
+  "indType": 0,
+  "age": 23,
+  "underwater": 5,
+  "joystick": 9,
+  "gender": "Non-Binary",
+  "pitchType": "NormalPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 5,
+          "certainty": 5,
+          "frustration": 5,
+          "workload": 5,
+          "trialCondition": 1,
+          "trialTime": 21.3646011,
+          "inputTime": 21.3642387,
+          "startAttitude": {
+            "pitch": 54.0000038,
+            "yaw": 168.295715,
+            "roll": 211.0
+          },
+          "finalAttitude": {
+            "pitch": 125.229759,
+            "yaw": 168.295715,
+            "roll": 19.214386
+          },
+          "indicator": "",
+          "pitchDifference": 71.22975,
+          "rollDifference": -191.785614
+        },
+        {
+          "trial": 2,
+          "confidence": 6,
+          "certainty": 6,
+          "frustration": 6,
+          "workload": 6,
+          "trialCondition": 1,
+          "trialTime": 2.00354767,
+          "inputTime": 2.00344086,
+          "startAttitude": {
+            "pitch": 273.999939,
+            "yaw": 180.0,
+            "roll": 71.0
+          },
+          "finalAttitude": {
+            "pitch": -93.99994,
+            "yaw": 180.0,
+            "roll": -109.0
+          },
+          "indicator": "",
+          "pitchDifference": -367.999878,
+          "rollDifference": -180.0
+        }
+      ]
+    }
+  ]
+}

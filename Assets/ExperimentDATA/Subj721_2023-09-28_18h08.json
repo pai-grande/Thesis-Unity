@@ -1,0 +1,68 @@
+{
+  "num": 721,
+  "order": 1,
+  "indType": 0,
+  "age": 33,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Non-Binary",
+  "pitchType": "NormalPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 46.09752,
+          "inputTime": 46.09719,
+          "genPitch": 156,
+          "genRoll": 146,
+          "startAttitude": {
+            "pitch": 23.9999962,
+            "yaw": 180.0,
+            "roll": 326.0
+          },
+          "finalAttitude": {
+            "pitch": 23.9999962,
+            "yaw": 180.0,
+            "roll": 326.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 14.2324524,
+          "inputTime": 14.23233,
+          "genPitch": 171,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 8.999999,
+            "yaw": 180.0,
+            "roll": 61.00001
+          },
+          "finalAttitude": {
+            "pitch": 8.999999,
+            "yaw": 180.0,
+            "roll": 61.00001
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0
+        }
+      ]
+    }
+  ]
+}

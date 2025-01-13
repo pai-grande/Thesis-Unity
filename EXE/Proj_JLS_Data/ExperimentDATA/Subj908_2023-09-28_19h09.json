@@ -1,0 +1,131 @@
+{
+  "num": 908,
+  "order": 0,
+  "indType": 0,
+  "age": 34,
+  "underwater": 4,
+  "joystick": 3,
+  "gender": "Non-Binary",
+  "pitchType": "InvertedPitch",
+  "indicatorChoice": "Normal",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 170.093048,
+          "inputTime": 170.090729,
+          "genPitch": 0,
+          "genRoll": 0,
+          "startAttitude": {
+            "pitch": 0.0,
+            "yaw": 342.610535,
+            "roll": 0.0
+          },
+          "finalAttitude": {
+            "pitch": 351.073853,
+            "yaw": 342.610535,
+            "roll": 358.9849
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 8.926147,
+          "rollDifference": 1.0151062,
+          "pitchDifferenceMove": 351.073853,
+          "rollDifferenceMove": 358.9849
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.8047943,
+          "inputTime": 0.804779053,
+          "genPitch": 86,
+          "genRoll": 126,
+          "startAttitude": {
+            "pitch": 86.00008,
+            "yaw": 0.5914198,
+            "roll": 126.000015
+          },
+          "finalAttitude": {
+            "pitch": 86.18695,
+            "yaw": 0.5914198,
+            "roll": 126.5884
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 86.18695,
+          "rollDifference": 126.5884,
+          "pitchDifferenceMove": 0.18687439,
+          "rollDifferenceMove": 0.588386536
+        }
+      ]
+    },
+    {
+      "condition": "Control",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 0.8047943,
+          "inputTime": 4.694641,
+          "genPitch": 86,
+          "genRoll": 126,
+          "startAttitude": {
+            "pitch": 86.00008,
+            "yaw": 0.0,
+            "roll": 126.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -86.00008,
+          "rollDifferenceMove": -126.000015
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 0,
+          "trialTime": 1.042511,
+          "inputTime": 1.04249573,
+          "genPitch": -79,
+          "genRoll": 126,
+          "startAttitude": {
+            "pitch": 281.0,
+            "yaw": -8.948981E-06,
+            "roll": 126.0
+          },
+          "finalAttitude": {
+            "pitch": 281.0,
+            "yaw": -8.948981E-06,
+            "roll": 126.0
+          },
+          "indicatorChoice": "Normal",
+          "pitchDifference": 79.0,
+          "rollDifference": 126.0,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        }
+      ]
+    }
+  ]
+}

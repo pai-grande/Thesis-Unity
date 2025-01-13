@@ -1,0 +1,450 @@
+{
+  "num": 0,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "pitchType": "",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 9.996206,
+          "inputTime": 4.775934,
+          "genPitch": -174,
+          "genRoll": -154,
+          "startAttitude": {
+            "pitch": 354.0,
+            "yaw": 179.386978,
+            "roll": 26.0000019
+          },
+          "finalAttitude": {
+            "pitch": 354.687653,
+            "yaw": 179.386978,
+            "roll": 27.4319382
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 5.31234741,
+          "rollDifference": 27.4319382,
+          "pitchDifferenceMove": 0.6876526,
+          "rollDifferenceMove": 1.43193626
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 2.86070251,
+          "inputTime": 0.917999268,
+          "genPitch": -129,
+          "genRoll": -49,
+          "startAttitude": {
+            "pitch": 309.0,
+            "yaw": 179.126282,
+            "roll": 131.0
+          },
+          "finalAttitude": {
+            "pitch": 308.983154,
+            "yaw": 179.126282,
+            "roll": 131.999588
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 51.0168457,
+          "rollDifference": 131.999588,
+          "pitchDifferenceMove": -0.0168457031,
+          "rollDifferenceMove": 0.999588
+        },
+        {
+          "trial": 3,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 2.06907272,
+          "inputTime": 0.9198227,
+          "genPitch": 116,
+          "genRoll": 31,
+          "startAttitude": {
+            "pitch": 64.00001,
+            "yaw": 180.8793,
+            "roll": 211.0
+          },
+          "finalAttitude": {
+            "pitch": 64.82845,
+            "yaw": 180.8793,
+            "roll": 212.003357
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 64.82845,
+          "rollDifference": 147.996643,
+          "pitchDifferenceMove": 0.828445435,
+          "rollDifferenceMove": 1.00335693
+        },
+        {
+          "trial": 4,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 2.66401672,
+          "inputTime": 0.9198227,
+          "genPitch": 151,
+          "genRoll": 61,
+          "startAttitude": {
+            "pitch": 28.9999924,
+            "yaw": 180.0,
+            "roll": 241.0
+          },
+          "finalAttitude": {
+            "pitch": 28.9999924,
+            "yaw": 180.0,
+            "roll": 241.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 28.9999924,
+          "rollDifference": 119.0,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        },
+        {
+          "trial": 5,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 2.68927336,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 80.19958,
+            "yaw": 2.68927336,
+            "roll": 243.683273
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 80.19958,
+          "rollDifference": 116.316727,
+          "pitchDifferenceMove": -0.8004532,
+          "rollDifferenceMove": 2.683258
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": null,
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 6,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 4.05734253,
+          "inputTime": 1.03198242,
+          "genPitch": 81,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 81.00003,
+            "yaw": 0.0,
+            "roll": 241.000015
+          },
+          "finalAttitude": {
+            "pitch": 0.0,
+            "yaw": 0.0,
+            "roll": 0.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 0.0,
+          "rollDifference": 0.0,
+          "pitchDifferenceMove": -81.00003,
+          "rollDifferenceMove": -241.000015
+        },
+        {
+          "trial": 7,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.445045471,
+          "inputTime": 1.03198242,
+          "genPitch": 146,
+          "genRoll": -99,
+          "startAttitude": {
+            "pitch": 34.00001,
+            "yaw": 180.0,
+            "roll": 80.99999
+          },
+          "finalAttitude": {
+            "pitch": 34.00001,
+            "yaw": 180.0,
+            "roll": 80.99999
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 34.00001,
+          "rollDifference": 80.99999,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        },
+        {
+          "trial": 8,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.42149353,
+          "inputTime": 1.03198242,
+          "genPitch": 131,
+          "genRoll": -119,
+          "startAttitude": {
+            "pitch": 49.0000038,
+            "yaw": 180.0,
+            "roll": 61.0000038
+          },
+          "finalAttitude": {
+            "pitch": 49.0000038,
+            "yaw": 180.0,
+            "roll": 61.0000038
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 49.0000038,
+          "rollDifference": 61.0000038,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        },
+        {
+          "trial": 9,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 1.03939056,
+          "inputTime": 1.03198242,
+          "genPitch": -119,
+          "genRoll": 181,
+          "startAttitude": {
+            "pitch": 298.999969,
+            "yaw": 180.0,
+            "roll": 0.999999464
+          },
+          "finalAttitude": {
+            "pitch": 298.999969,
+            "yaw": 180.0,
+            "roll": 0.999999464
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 61.00003,
+          "rollDifference": 0.999999464,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        },
+        {
+          "trial": 10,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.601394653,
+          "inputTime": 1.03198242,
+          "genPitch": -44,
+          "genRoll": 121,
+          "startAttitude": {
+            "pitch": 316.0,
+            "yaw": 2.3737698E-06,
+            "roll": 121.0
+          },
+          "finalAttitude": {
+            "pitch": 316.0,
+            "yaw": 2.3737698E-06,
+            "roll": 121.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 44.0,
+          "rollDifference": 121.0,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        }
+      ]
+    }
+  ]
+}

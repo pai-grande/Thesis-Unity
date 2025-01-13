@@ -1,0 +1,72 @@
+{
+  "num": 0,
+  "order": 0,
+  "indType": 0,
+  "age": 0,
+  "underwater": 0,
+  "joystick": 0,
+  "gender": "Male",
+  "pitchType": "InvertedPitch",
+  "indicatorChoice": "",
+  "blocks": [
+    {
+      "condition": "PseudoHaptic",
+      "expData": [
+        {
+          "trial": 1,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 1.53093338,
+          "inputTime": 0.0,
+          "genPitch": -79,
+          "genRoll": 136,
+          "startAttitude": {
+            "pitch": 281.0,
+            "yaw": 0.0,
+            "roll": 136.0
+          },
+          "finalAttitude": {
+            "pitch": 281.0,
+            "yaw": 0.0,
+            "roll": 136.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 79.0,
+          "rollDifference": 136.0,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        },
+        {
+          "trial": 2,
+          "confidence": 0,
+          "certainty": 0,
+          "frustration": 0,
+          "workload": 0,
+          "trialCondition": 1,
+          "trialTime": 0.231140137,
+          "inputTime": 0.0,
+          "genPitch": -144,
+          "genRoll": 161,
+          "startAttitude": {
+            "pitch": 324.0,
+            "yaw": 180.0,
+            "roll": 341.0
+          },
+          "finalAttitude": {
+            "pitch": 324.0,
+            "yaw": 180.0,
+            "roll": 341.0
+          },
+          "indicatorChoice": "",
+          "pitchDifference": 36.0,
+          "rollDifference": 19.0,
+          "pitchDifferenceMove": 0.0,
+          "rollDifferenceMove": 0.0
+        }
+      ]
+    }
+  ]
+}
